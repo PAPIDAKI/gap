@@ -1,0 +1,17 @@
+<h5>action#Show</h5>
+<%=link_to "<<= Back to index",groups_path %>
+
+<h2><%=@group.name%></h2>
+<p>
+	<b>Address:</b><%=@group.address%>
+</p>
+<p>
+	<b>Phone:</b><%=@group.phone%> <b> Mobile:</b><%=@group.mobile%>
+</p>
+<%=link_to"Edit",edit_group_path(@group)%>
+<p>
+	<%=link_to "Members of Group",group_growers_path(@group) %>
+</p>
+<p>
+	<%=link_to "Add New Grower",new_group_grower_path(@group)%>
+</p>

@@ -1,0 +1,17 @@
+<h1><%=@group.name%></h1>
+<h3><%=pluralize(@growers.count,"Grower") %></h3>
+<%=link_to "<<= Back to index",groups_path %>
+
+
+<ol>
+	<% @growers.each do |r| %>
+	<li>
+		<%= link_to r.name,root_path %> Mobile: <%= r.mobile%>
+	</li>
+	<% end%>
+
+</ol>
+
+<%=link_to("Add Grower",new_group_grower_path(@group))%>
+
+

@@ -1,0 +1,14 @@
+<h1><%= pluralize(@groups.count ,'Group') %> </h1>
+
+<%=link_to("Add new Group",new_group_path)%>
+
+
+ <ul>
+ 	<% @groups.each do |group|%>
+ 	<li>
+ 		<strong>
+ 			<%= link_to(group.name ,group_path(group)) %>
+ 		</strong> 
+ 		<%=group.phone %> <%=group.mobile%></li>
+ 	<% end%>
+ </ul>

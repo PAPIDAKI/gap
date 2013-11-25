@@ -1,0 +1,8 @@
+<h1><%=@grower.name%></h1>
+<%=link_to "<<=Back to Growers list ",growers_path%>
+<p><b>Name :</b><%=@grower.name%></p>
+<p><b>Address:</b><%=@grower.address%></p>
+<p><b>Mobile:</b><%=@grower.mobile %></p>
+<p><b>GGN:</b><%=@grower.ggn%></p>
+<%=link_to "Edit", edit_grower_path %>
+<%=link_to "Delete",grower_path,method: :delete %>

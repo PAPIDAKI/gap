@@ -1,0 +1,18 @@
+<h1>Editing <%=@grower.name %></h1>
+<%=form_for(@grower) do |f| %>
+<p><%= f.label :name%></p>
+<p><%= f.text_field :name,autofocus: true%></p>
+
+<p><%= f.label :address%></p>
+<p><%= f.text_area :address%></p>
+
+<p><%= f.label :mobile%></p>
+<p><%= f.text_field :mobile%></p>
+<p><%= f.label :ggn%></p>
+<p><%= f.text_field :ggn%></p>
+<p>
+<%=f.submit%>  | <%=link_to "Cancel",group_grower_path(@grower)
+%>
+</p>
+<%end%>
+

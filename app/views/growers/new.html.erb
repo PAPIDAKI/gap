@@ -1,0 +1,16 @@
+<h3>New Grower for <%= @group.name%></h3>
+<%=form_for([@group,@grower]) do |f| %>
+<p><%= f.label :name%></p>
+<p><%= f.text_field :name,autofocus: true%></p>
+
+<p><%= f.label :address%></p>
+<p><%= f.text_area :address%></p>
+
+<p><%= f.label :mobile%></p>
+<p><%= f.text_field :mobile%></p>
+<p><%= f.label :ggn%></p>
+<p><%= f.text_field :ggn%></p>
+<p>
+<%=f.submit%>  | <%=link_to "Cancel",group_growers_path%>
+</p>
+<%end%>
