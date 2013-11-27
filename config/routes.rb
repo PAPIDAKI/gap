@@ -1,6 +1,9 @@
 Gap::Application.routes.draw do
+  root "static_pages#home"
+  get "static_pages/about"
+  get "static_pages/contact_us"
   devise_for :users
-  root "groups#index"
+  #root "groups#index"
   # get "groups"=>"groups#index"
   # get "groups/:id"=>"groups#show",as:"group"
   # get "groups/:id/edit"=>"groups#edit",as:"edit_group"
