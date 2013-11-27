@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
 
 	def index
 		@groups=Group.all
+		@growers=Grower.all
 	end
 
 	def show

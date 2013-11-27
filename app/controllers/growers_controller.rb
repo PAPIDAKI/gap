@@ -2,6 +2,7 @@ class GrowersController < ApplicationController
 	def index
 		@group=Group.find(params[:group_id])
 		@growers=@group.growers.all
+		
 	end
 
 	def show

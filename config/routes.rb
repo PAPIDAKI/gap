@@ -1,4 +1,5 @@
 Gap::Application.routes.draw do
+  devise_for :users
   root "groups#index"
   # get "groups"=>"groups#index"
   # get "groups/:id"=>"groups#show",as:"group"
