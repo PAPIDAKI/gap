@@ -1,5 +1,5 @@
 <h1>Editing <%=@grower.name %></h1>
-<%=form_for(@grower) do |f| %>
+<%=form_for([@group,@grower]) do |f| %>
 <p><%= f.label :name%></p>
 <p><%= f.text_field :name,autofocus: true%></p>
 
@@ -11,7 +11,7 @@
 <p><%= f.label :ggn%></p>
 <p><%= f.text_field :ggn%></p>
 <p>
-<%=f.submit%>  | <%=link_to "Cancel",group_grower_path(@grower)
+<%=f.submit%>  | <%=link_to "Cancel",group_grower_path(@group,@grower)
 %>
 </p>
 <%end%>

@@ -8,6 +8,7 @@ Gap::Application.routes.draw do
   # get "groups/:id"=>"groups#show",as:"group"
   # get "groups/:id/edit"=>"groups#edit",as:"edit_group"
   # patch "groups/:id"=>"groups#update"
+  
   resources :groups do
     resources :growers
    end

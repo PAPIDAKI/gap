@@ -1,8 +1,9 @@
-<h1><%=@grower.name%></h1>
-<%=link_to "<<=Back to Growers list ",growers_path%>
+<h3><%=@group.name%></h3>
+<h5><%=@grower.name%></h5>
+<%=link_to "<<=Back to Growers list ",group_growers_path%>
 <p><b>Name :</b><%=@grower.name%></p>
 <p><b>Address:</b><%=@grower.address%></p>
 <p><b>Mobile:</b><%=@grower.mobile %></p>
 <p><b>GGN:</b><%=@grower.ggn%></p>
-<%=link_to "Edit", edit_grower_path %>
-<%=link_to "Delete",grower_path,method: :delete %>
+<%=link_to "Edit", edit_group_grower_path(@group,@grower) %> | 
+<%=link_to "Delete",group_grower_path(@group,@grower),method: :delete %>

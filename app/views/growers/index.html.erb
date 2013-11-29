@@ -1,17 +1,27 @@
-<h1><%=@group.name%></h1>
-<h3><%=pluralize(@growers.count,"Grower") %></h3>
+<div>
+<h3><%=@group.name%></h3> 
+<h5><%=pluralize(@growers.count,"Grower") %></h5>
+</div>
+
+<p>
 <%=link_to "<<= Back to index",groups_path %>
+</p>
+
+<table>
+	<tr><th>Name</th><th>Contact</th><th>Details</th></tr>
 
 
-<ol>
-	<% @growers.each do |r| %>
-	<li>
-		<%= link_to r.name,root_path %> Mobile: <%= r.mobile%>
-	</li>
-	<% end%>
+	<%@growers.each do |grower|%>
+	<tr>
+		<td><%=link_to grower.name,group_grower_path(@group,grower)%></td>
+		<td><%= grower.mobile%></td>
+		<td><%=link_to "Show",group_grower_path(@group,grower)%></td>
+	</tr>
+	<%end%>
+</table>
 
-</ol>
+
+
 
 <%=link_to("Add Grower",new_group_grower_path(@group))%>
-
 
