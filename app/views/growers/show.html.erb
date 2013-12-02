@@ -7,3 +7,11 @@
 <p><b>GGN:</b><%=@grower.ggn%></p>
 <%=link_to "Edit", edit_group_grower_path(@group,@grower) %> | 
 <%=link_to "Delete",group_grower_path(@group,@grower),method: :delete %>
+<br><br>
+<hr>
+<p>
+	<%=link_to "List of Fields",grower_pmus_path(@grower)%>
+</p>
+<p>
+	<%=link_to "Add a Field ",new_grower_pmu_path(@grower)%>
+</p

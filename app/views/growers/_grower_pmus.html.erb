@@ -1,0 +1,24 @@
+
+<h3>Fields list</h3>
+
+    <% @pmus.each do |pmu| %>
+      <tr>
+        <td><%= pmu.grower_id %></td>
+        <td><%= pmu.produce %></td>
+        <td><%= pmu.variety %></td>
+        <td><%= pmu.location %></td>
+        <td><%= pmu.nearest_village %></td>
+        <td><%= pmu.address %></td>
+        <td><%= pmu.plantation_year %></td>
+        <td><%= pmu.number_of_trees %></td>
+        <td><%= pmu.area %></td>
+        <td><%= pmu.expected_production %></td>
+        <td><%= link_to "Edit",edit_grower_pmu_path(@grower,pmu)%></td>
+        <td><%=link_to "Delete",grower_pmu_path(@grower,pmu),method: :delete%></td>
+        
+      </tr>
+    <% end %>
+  
+
+
+

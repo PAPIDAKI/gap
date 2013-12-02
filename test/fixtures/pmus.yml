@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  produce: MyString
+  variety: MyString
+  location: MyString
+  nearest_village: MyString
+  address: MyString
+  plantation_year: 1
+  number_of_trees: 1
+  area: 1
+  expected_production: 1
+
+two:
+  produce: MyString
+  variety: MyString
+  location: MyString
+  nearest_village: MyString
+  address: MyString
+  plantation_year: 1
+  number_of_trees: 1
+  area: 1
+  expected_production: 1

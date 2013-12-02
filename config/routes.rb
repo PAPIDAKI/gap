@@ -10,8 +10,17 @@ Gap::Application.routes.draw do
   # patch "groups/:id"=>"groups#update"
   
   resources :groups do
-    resources :growers
+    resources :growers 
    end
+
+   resources :growers do
+    resources :pmus
+    end
+
+   
+
+
+
 
 
    end

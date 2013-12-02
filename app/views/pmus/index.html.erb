@@ -1,0 +1,51 @@
+<div>
+<h3><%=@grower.name%></h3> 
+<h5><%=pluralize(@pmus.count,"PMU field") %></h5> 
+</div>
+<div>
+  <%=link_to "<<= Back to Group",group_growers_path(@grower.group_id) %>
+
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Grower id</th>
+      <th>Produce</th>
+      <th>Variety</th>
+      <th>Location</th>
+      <th>Nearest village</th>
+      <th>Address</th>
+      <th>Plantation year</th>
+      <th>Number of trees</th>
+      <th>Area</th>
+      <th>Expected production</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pmus.each do |pmu| %>
+      <tr>
+        <td><%= pmu.grower_id %></td>
+        <td><%= pmu.produce %></td>
+        <td><%= pmu.variety %></td>
+        <td><%= pmu.location %></td>
+        <td><%= pmu.nearest_village %></td>
+        <td><%= pmu.address %></td>
+        <td><%= pmu.plantation_year %></td>
+        <td><%= pmu.number_of_trees %></td>
+        <td><%= pmu.area %></td>
+        <td><%= pmu.expected_production %></td>
+        <td><%= link_to "Edit",edit_grower_pmu_path(@grower,pmu)%></td>
+        <td><%=link_to "Delete",grower_pmu_path(@grower,pmu),method: :delete%></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add a Field', new_grower_pmu_path(@grower) %>

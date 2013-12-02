@@ -1,8 +1,14 @@
 Tasks
-Sign up login log out  
-	Install devise gem
+bootstrap app turn to green 
+css and spacing 
+data per user account 
+roles and rights 
 
-Add field resources
+    ΟΚSign up login log out  OK
+	ΟΚInstall devise gem OK
+
+
+Add field resources 
 Tag actions
 Log entries
 Print outs and pdf's 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127064120) do
+ActiveRecord::Schema.define(version: 20131129123642) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
@@ -30,6 +30,21 @@ ActiveRecord::Schema.define(version: 20131127064120) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "group_id"
+  end
+
+  create_table "pmus", force: true do |t|
+    t.string   "produce"
+    t.string   "variety"
+    t.string   "location"
+    t.string   "nearest_village"
+    t.string   "address"
+    t.integer  "plantation_year"
+    t.integer  "number_of_trees"
+    t.integer  "area"
+    t.integer  "expected_production"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "grower_id"
   end
 
   create_table "users", force: true do |t|

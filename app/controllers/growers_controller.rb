@@ -3,41 +3,34 @@ class GrowersController < ApplicationController
 
 
 	def index
-		@growers=@group.growers
-		
+		@growers=@group.growers	
 	end
 
 	def show
 		@grower=@group.growers.find(params[:id])
-
-
-
-
 	end
 
 	def edit
 		@grower=Grower.find(params[:id])
 
 	end
+	
 	def update
 		@grower=Grower.find(params[:id])
 		@grower.update(grower_params)
 		redirect_to group_growers_path
 	end
+
 	def new
 		@grower=@group.growers.new
 	end
+
 	def create
 		@grower=@group.growers.new(grower_params)
 		@grower.save
-		redirect_to group_growers_path(@group)
-
-		
+		redirect_to group_growers_path(@group)	
 	end
-					
-		
-		
-	
+						
 	def destroy
 		@grower=Grower.find(params[:id])
 		@grower.destroy

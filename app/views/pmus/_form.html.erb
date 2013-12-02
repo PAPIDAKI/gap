@@ -1,0 +1,60 @@
+<%= form_for([@grower,@pmu]) do |f| %>
+  <% if @pmu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pmu.errors.count, "error") %> prohibited this pmu from being saved:</h2>
+
+      <ul>
+      <% @pmu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :grower_id %><br>
+    <%= f.number_field :grower_id %>
+  </div>
+  <div class="field">
+    <%= f.label :produce %><br>
+    <%= f.text_field :produce %>
+  </div>
+  <div class="field">
+    <%= f.label :variety %><br>
+    <%= f.text_field :variety %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :nearest_village %><br>
+    <%= f.text_field :nearest_village %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :plantation_year %><br>
+    <%= f.number_field :plantation_year %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_trees %><br>
+    <%= f.number_field :number_of_trees %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.number_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :expected_production %><br>
+    <%= f.number_field :expected_production %>
+  </div>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
