@@ -12,6 +12,6 @@
  		<strong>
  			<%= link_to(group.name ,group_path(group)) %>
  		</strong> 
- 		<%=group.phone %> <%=group.mobile%></li>
+ 		  <%= group.growers.count(@group) %> Growers</li>
  	<% end%>
  </ul>

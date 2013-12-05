@@ -10,6 +10,12 @@
 </p>
 <%=link_to"Edit",edit_group_path(@group)%> | 
 <%=link_to"Delete Group",group_path(@group) ,method: :delete %>
+<hr>
+<%=render  partial:"grower_list",locals:{growers:Grower.find_all_by_group_id(@group.id)} %>
+
+
+
+
 <p>
 	<%=link_to "Members of Group",group_growers_path(@group) %>
 </p>
