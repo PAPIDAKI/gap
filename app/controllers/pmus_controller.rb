@@ -2,9 +2,10 @@ class PmusController < ApplicationController
   
   before_action :set_pmu, only: [:show, :edit, :update, :destroy]
   before_filter :load_grower
-
   def index
     @pmus=@grower.pmus
+   
+
   end
 
   
@@ -61,5 +62,6 @@ class PmusController < ApplicationController
     def load_grower
     @grower=Grower.find(params[:grower_id])
     end
+    
 
 end

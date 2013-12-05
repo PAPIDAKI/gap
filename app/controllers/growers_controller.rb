@@ -3,7 +3,8 @@ class GrowersController < ApplicationController
 
 
 	def index
-		@growers=@group.growers	
+		@growers=@group.growers
+
 	end
 
 	def show
@@ -14,7 +15,7 @@ class GrowersController < ApplicationController
 		@grower=Grower.find(params[:id])
 
 	end
-	
+
 	def update
 		@grower=Grower.find(params[:id])
 		@grower.update(grower_params)

@@ -1,7 +1,10 @@
 <div>
 <h3><%=@grower.name%></h3> 
 <h5><%=pluralize(@pmus.count,"PMU field") %></h5> 
+<h5><%=@pmus.sum(:expected_production)%>Tons</h5>
 </div>
+
+
 <div>
   <%=link_to "<<= Back to Group",group_growers_path(@grower.group_id) %>
 

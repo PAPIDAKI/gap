@@ -1,5 +1,5 @@
 <h3><%=@group.name%></h3>
-<h5><%=@grower.name%></h5>
+<h5><%=@grower.name%></h5> 
 <%=link_to "<<=Back to Growers list ",group_growers_path%>
 <p><b>Name :</b><%=@grower.name%></p>
 <p><b>Address:</b><%=@grower.address%></p>
@@ -8,6 +8,10 @@
 <%=link_to "Edit", edit_group_grower_path(@group,@grower) %> | 
 <%=link_to "Delete",group_grower_path(@group,@grower),method: :delete %>
 <br><br>
+<hr>
+<h5>Fields in Production <%=@grower.pmus.count(:expected_production) %></h5>
+<h5>Expected Production <%=@grower.pmus.sum(:expected_production)%></h5>
+<%=render :partial=> "pmu_list",:locals=>{:pmus=>Pmu.find_all_by_grower_id(@grower.id)} %>
 <hr>
 <p>
 	<%=link_to "List of Fields",grower_pmus_path(@grower)%>

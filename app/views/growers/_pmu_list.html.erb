@@ -1,0 +1,16 @@
+<%  pmus.each  do |pmu|   %>
+    <table>
+      <tr>
+        <td><%= pmu.produce %></td>
+        <td><%= pmu.variety %></td>
+        <td><%= pmu.location %></td>
+        <td><%= pmu.nearest_village %></td>
+        
+        <td><%= pmu.expected_production %></td>
+        <td><%= link_to "Edit",edit_grower_pmu_path(@grower,pmu)%></td>
+        <td><%=link_to "Delete",grower_pmu_path(@grower,pmu),method: :delete%></td>
+        
+      </tr>
+  </table>
+
+    <% end %>

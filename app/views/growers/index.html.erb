@@ -8,13 +8,15 @@
 </p>
 
 <table>
-	<tr><th>Name</th><th>Contact</th><th>Details</th></tr>
+	<tr><th>Name</th><th>Contact</th><th>Exp Production</th></tr>
 
 
 	<%@growers.each do |grower|%>
 	<tr>
 		<td><%=link_to grower.name,group_grower_path(@group,grower)%></td>
 		<td><%= grower.mobile%></td>
+		<td></td>
+		<td><%=grower.pmus.sum(:expected_production)%></td>
 	</tr>
 	<%end%>
 </table>

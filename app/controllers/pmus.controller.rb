@@ -1,0 +1,4 @@
+class PmusController < ApplicationController
+	
+
+end
