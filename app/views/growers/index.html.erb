@@ -1,22 +1,23 @@
+<p>
+<%=link_to "<<= Back to index",groups_path %>
+</p>
 <div>
 <h3><%=@group.name%></h3> 
 <h5><%=pluralize(@growers.count,"Grower") %></h5>
 </div>
 
-<p>
-<%=link_to "<<= Back to index",groups_path %>
-</p>
+
 
 <table>
-	<tr><th>Name</th><th>Contact</th><th>Exp Production</th></tr>
+	<tr><th>Name</th><th>Fields</th><th>Tons</th></tr>
 
 
 	<%@growers.each do |grower|%>
 	<tr>
 		<td><%=link_to grower.name,group_grower_path(@group,grower)%></td>
-		<td><%= grower.mobile%></td>
-		<td></td>
+		<td><%= grower.pmus.count%></td>
 		<td><%=grower.pmus.sum(:expected_production)%></td>
+
 	</tr>
 	<%end%>
 </table>

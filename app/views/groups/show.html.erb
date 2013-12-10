@@ -1,7 +1,6 @@
-<h5>action#Show</h5>
 <%=link_to "<<= Back to index",groups_path %>
 
-<h2><%=@group.name%></h2>
+<h2><%=@group.name%></h2> <h4><%=@group.growers.count%>  Growers  <%=@group.pmus.count%> Fields <%=@group.pmus.sum(:expected_production)%>  Tons</h4>
 <p>
 	<b>Address:</b><%=@group.address%>
 </p>

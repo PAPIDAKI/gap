@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 	def index
 		@groups=Group.all
 		@growers=Grower.all
+		@pmus=Pmu.all
 	end
 
 	def show
