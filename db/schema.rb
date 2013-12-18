@@ -11,7 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129123642) do
+ActiveRecord::Schema.define(version: 20131218131626) do
+
+  create_table "chems", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "felines", force: true do |t|
+    t.integer  "pmu_id"
+    t.integer  "fe_id"
+    t.date     "date"
+    t.string   "operator"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fertilizers", force: true do |t|
+    t.string   "trade_name"
+    t.string   "composition"
+    t.string   "justification"
+    t.string   "application_method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fertlines", force: true do |t|
+    t.integer  "pmu_id"
+    t.integer  "fert_id"
+    t.date     "date"
+    t.float    "quantity"
+    t.string   "app_method"
+    t.string   "operator"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ferts", force: true do |t|
+    t.string   "name"
+    t.integer  "phi"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "groups", force: true do |t|
     t.string   "name"
@@ -32,6 +80,48 @@ ActiveRecord::Schema.define(version: 20131129123642) do
     t.integer  "group_id"
   end
 
+  create_table "line_items", force: true do |t|
+    t.string   "plant_protection_id"
+    t.string   "fertilizer_id"
+    t.string   "payment_id"
+    t.datetime "date"
+    t.decimal  "quantity_applied"
+    t.string   "operator"
+    t.string   "authorized_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "pmu_id"
+  end
+
+  create_table "lines", force: true do |t|
+    t.integer  "pmu_id",       limit: 255
+    t.integer  "sub_id",       limit: 255
+    t.date     "date"
+    t.float    "quantity"
+    t.string   "reasoning"
+    t.string   "operator"
+    t.string   "tech_advisor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.decimal  "amount"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "plant_protections", force: true do |t|
+    t.string   "trade_name"
+    t.string   "active_ingredient"
+    t.integer  "phi"
+    t.string   "justification"
+    t.string   "application_method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pmus", force: true do |t|
     t.string   "produce"
     t.string   "variety"
@@ -45,6 +135,32 @@ ActiveRecord::Schema.define(version: 20131129123642) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "grower_id"
+  end
+
+  create_table "pp_line_items", force: true do |t|
+    t.date     "date"
+    t.string   "quantity"
+    t.string   "justification"
+    t.string   "application_machinery"
+    t.string   "operator"
+    t.string   "tech_approval"
+    t.integer  "pmu_id",                limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "pp_id"
+  end
+
+  create_table "pps", force: true do |t|
+    t.string   "name"
+    t.integer  "phi"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subs", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

@@ -1,0 +1,31 @@
+fertLine 
+:date
+:pmu_id
+:fert_id
+	:name
+:phi
+:quantity
+:justification
+:app_method
+:operator
+:tech_advisor
+
+One Fert line 
+
+>>>fert 
+
+add fert 
+add pp
+add water
+add cultivation
+add payment 
+add note 
+add sampling 
+
+pmu/1/lines all
+pmu/1/fertlines 
+pmu/1/pplines 
+grower/1/payments
+
+pmu/1/action  pp fert water
+

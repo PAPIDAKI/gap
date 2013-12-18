@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pmu_id: MyString
+  sub_id: MyString
+  date: 2013-12-18
+  quantity: 1.5
+  reasoning: MyString
+  operator: MyString
+  tech_advisor: MyString
+
+two:
+  pmu_id: MyString
+  sub_id: MyString
+  date: 2013-12-18
+  quantity: 1.5
+  reasoning: MyString
+  operator: MyString
+  tech_advisor: MyString

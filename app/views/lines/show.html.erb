@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pmu:</strong>
+  <%= @line.pmu_id %>
+</p>
+
+<p>
+  <strong>Sub:</strong>
+  <%= @line.sub_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @line.date %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @line.quantity %>
+</p>
+
+<p>
+  <strong>Reasoning:</strong>
+  <%= @line.reasoning %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @line.operator %>
+</p>
+
+<p>
+  <strong>Tech advisor:</strong>
+  <%= @line.tech_advisor %>
+</p>
+
+<%= link_to 'Edit', edit_line_path(@line) %> |
+<%= link_to 'Back', lines_path %>
