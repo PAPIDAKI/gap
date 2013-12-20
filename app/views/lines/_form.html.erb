@@ -15,10 +15,12 @@
     <%= f.label :pmu_id %><br>
     <%= f.text_field :pmu_id %>
   </div>
+  
   <div class="field">
-    <%= f.label :sub_id %><br>
-    <%= f.text_field :sub_id %>
+    <%= f.label :sub_id,"Substance" %><br>
+    <%= f.collection_select :sub_id, Sub.all,:id,:name %> 
   </div>
+
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>

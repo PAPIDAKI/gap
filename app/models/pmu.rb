@@ -3,8 +3,6 @@ class Pmu < ActiveRecord::Base
 	validates :produce,:variety , presence:true
 
 	has_many :lines  , dependent: :destroy
-	has_many :pmus, :through => :lines
+	has_many :subs, :through => :lines
 	
-	accepts_nested_attributes_for :subs
-
 end

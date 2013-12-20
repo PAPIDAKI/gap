@@ -3,9 +3,9 @@
 <table>
   <thead>
     <tr>
-      <th>Pmu</th>
-      <th>Sub</th>
       <th>Date</th>
+      <th>Pmu</th>
+      <th>Substance</th>
       <th>Quantity</th>
       <th>Reasoning</th>
       <th>Operator</th>
@@ -19,9 +19,9 @@
   <tbody>
     <% @lines.each do |line| %>
       <tr>
-        <td><%= line.pmu_id %></td>
-        <td><%= line.sub_id %></td>
         <td><%= line.date %></td>
+        <td><%= line.pmu.location %></td>
+        <td><%= line.sub.name %></td>
         <td><%= line.quantity %></td>
         <td><%= line.reasoning %></td>
         <td><%= line.operator %></td>

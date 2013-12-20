@@ -1,4 +1,4 @@
-class LinesController < ApplicationController
+ class LinesController < ApplicationController
   before_action :set_line, only: [:show, :edit, :update, :destroy]
 
   # GET /lines
@@ -10,21 +10,26 @@ class LinesController < ApplicationController
   # GET /lines/1
   # GET /lines/1.json
   def show
+    @line=Line.find(params[:id])
   end
 
   # GET /lines/new
   def new
     @line = Line.new
+    @subs =Sub.all
   end
 
   # GET /lines/1/edit
   def edit
+    @line=Line.find(params[:id])
+    @sub=Sub.last
   end
 
   # POST /lines
   # POST /lines.json
   def create
     @line = Line.new(line_params)
+    @sub =Sub.last
 
     respond_to do |format|
       if @line.save
@@ -40,6 +45,7 @@ class LinesController < ApplicationController
   # PATCH/PUT /lines/1
   # PATCH/PUT /lines/1.json
   def update
+    @line=Line.find(params[:id])
     respond_to do |format|
       if @line.update(line_params)
         format.html { redirect_to @line, notice: 'Line was successfully updated.' }

@@ -1,4 +1,4 @@
-†class SubsController < ApplicationController
+class SubsController < ApplicationController
   before_action :set_sub, only: [:show, :edit, :update, :destroy]
 
   # GET /subs

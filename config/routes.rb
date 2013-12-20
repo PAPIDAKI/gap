@@ -21,6 +21,10 @@ Gap::Application.routes.draw do
     resources :pmus
     end
 
+  resources :pmus do
+    resources :lines
+  end
+
    
 
 
