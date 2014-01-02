@@ -1,4 +1,5 @@
-<h1>Listing lines</h1>
+<%= link_to "Back to Grower",grower_pmu_path(2,21) %>
+<h3>Phyto Protection  for  <%=@pmu.location %></h3>
 
 <table>
   <thead>
@@ -26,9 +27,9 @@
         <td><%= line.reasoning %></td>
         <td><%= line.operator %></td>
         <td><%= line.tech_advisor %></td>
-        <td><%= link_to 'Show', line %></td>
-        <td><%= link_to 'Edit', edit_line_path(line) %></td>
-        <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to'Show'%></td>
+        <td><%= link_to 'Edit'%></td>
+        <td><%= link_to 'Destroy', "#", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Line', new_line_path %>
+<%= link_to 'New Line', new_pmu_line_path(@pmu) %>

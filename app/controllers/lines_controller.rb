@@ -4,48 +4,48 @@
   # GET /lines
   # GET /lines.json
   def index
-    @lines = Line.all
+    @pmu=Pmu.find(params[:pmu_id])
+    @lines = @pmu.lines
   end
 
   # GET /lines/1
   # GET /lines/1.json
   def show
-    @line=Line.find(params[:id])
+    @pmu=Pmu.find(params[:pmu_id])
+    @line=@pmu.lines.find(params[:id])
   end
 
   # GET /lines/new
   def new
-    @line = Line.new
+    @pmu=Pmu.find(params[:pmu_id])
+    @line =@pmu.lines.new
     @subs =Sub.all
   end
 
-  # GET /lines/1/edit
-  def edit
-    @line=Line.find(params[:id])
-    @sub=Sub.last
-  end
 
   # POST /lines
   # POST /lines.json
   def create
-    @line = Line.new(line_params)
-    @sub =Sub.last
-
-    respond_to do |format|
-      if @line.save
-        format.html { redirect_to @line, notice: 'Line was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @line }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @line.errors, status: :unprocessable_entity }
-      end
-    end
+    @pmu=Pmu.find(params[:pmu_id])
+    @line =@pmu.lines.new(line_params)
+    @line.save
+    redirect_to pmu_lines_path(@pmu)
   end
+
+  # GET /lines/1/edit
+  def edit
+
+    @pmu=Pmu.find(params[:pmu_id])
+    @line=@pmu.lines.find(params[:id])
+
+  end
+
 
   # PATCH/PUT /lines/1
   # PATCH/PUT /lines/1.json
   def update
-    @line=Line.find(params[:id])
+    @pmu=Pmu.find(params[:pmu_id])
+    @line=@pmu.lines.find(params[:id])
     respond_to do |format|
       if @line.update(line_params)
         format.html { redirect_to @line, notice: 'Line was successfully updated.' }
@@ -77,4 +77,4 @@
     def line_params
       params.require(:line).permit(:pmu_id, :sub_id, :date, :quantity, :reasoning, :operator, :tech_advisor)
     end
-end
+ end

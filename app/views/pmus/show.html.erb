@@ -1,26 +1,22 @@
+<%=link_to "<<<Back to Grower",group_grower_path(@grower.group_id,@grower)%>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Produce:</strong>
-  <%= @pmu.produce %>
-</p>
+  
+  <strong><%= @pmu.produce %></strong>
 
-<p>
-  <strong>Variety:</strong>
+  Variety:
   <%= @pmu.variety %>
 </p>
 
 <p>
   <strong>Location:</strong>
   <%= @pmu.location %>
-</p>
 
-<p>
   <strong>Nearest village:</strong>
   <%= @pmu.nearest_village %>
-</p>
 
-<p>
   <strong>Address:</strong>
   <%= @pmu.address %>
 </p>
@@ -28,22 +24,25 @@
 <p>
   <strong>Plantation year:</strong>
   <%= @pmu.plantation_year %>
-</p>
 
-<p>
   <strong>Number of trees:</strong>
   <%= @pmu.number_of_trees %>
-</p>
 
-<p>
   <strong>Area:</strong>
   <%= @pmu.area %>
-</p>
 
-<p>
   <strong>Expected production:</strong>
   <%= @pmu.expected_production %>
 </p>
 
+
 <%= link_to 'Edit', edit_grower_pmu_path(@grower,@pmu) %> |
-<%= link_to 'Back', grower_pmus_path(@group,@grower) %>
+
+<%= link_to 'Back', grower_pmus_path(@grower,@pmu) %>
+
+<hr>
+<%= link_to "Add Phyto Protection",new_pmu_line_path(@pmu,@line)%>
+<%= link_to "Add Fertilizer","#"%>
+<%= link_to "Add Irigation","#"%>
+<hr>
+<%=link_to "Phyto Protection Log",pmu_lines_path(@pmu)%>

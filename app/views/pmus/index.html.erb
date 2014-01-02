@@ -34,7 +34,7 @@
         <td><%= pmu.grower_id %></td>
         <td><%= pmu.produce %></td>
         <td><%= pmu.variety %></td>
-        <td><%= pmu.location %></td>
+        <td><%= link_to pmu.location,grower_pmu_path(@grower,pmu) %></td>
         <td><%= pmu.nearest_village %></td>
         <td><%= pmu.address %></td>
         <td><%= pmu.plantation_year %></td>

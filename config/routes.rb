@@ -1,5 +1,5 @@
 Gap::Application.routes.draw do
-  resources :lines
+  #resources :lines
 
   resources :subs
 
@@ -18,17 +18,16 @@ Gap::Application.routes.draw do
    end
 
    resources :growers do
-    resources :pmus
-    end
+    resources :pmus 
+  end
+
 
   resources :pmus do
     resources :lines
+    resources :fertilizers
+    resources :irrigation
   end
 
    
 
-
-
-
-
-   end
+  end
