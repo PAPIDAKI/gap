@@ -1,9 +1,10 @@
 <%=link_to "<<<Back to Grower",group_grower_path(@grower.group_id,@grower)%>
 
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  
+<p><strong><%=@grower.name %></strong></p>  
   <strong><%= @pmu.produce %></strong>
 
   Variety:
@@ -41,8 +42,10 @@
 <%= link_to 'Back', grower_pmus_path(@grower,@pmu) %>
 
 <hr>
-<%= link_to "Add Phyto Protection",new_pmu_line_path(@pmu,@line)%>
+<%= link_to "Add Phyto Protection",new_pmu_line_path(@pmu)%>
 <%= link_to "Add Fertilizer","#"%>
-<%= link_to "Add Irigation","#"%>
+<%= link_to "Add Irigation",new_pmu_irrigation_path(@pmu)%>
 <hr>
 <%=link_to "Phyto Protection Log",pmu_lines_path(@pmu)%>
+
+<%=link_to "Irrigation Log",pmu_irrigations_path(@pmu)%>

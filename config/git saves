@@ -1,0 +1,35 @@
+14490
+14206
+2869
+2840
+2811
+1607
+1607
+
+
+
+commit fe613e64903153b35d16c01e419831fe391f9a23
+Author: PAPIDAKI <papidakis@gmail.com>
+Date:   Fri Dec 27 16:57:26 2013 +0200
+
+    Tobe deleted
+
+commit 0a7e8c9c3bdae2c3f00d8a10c04b3117261801e5
+Author: PAPIDAKI <papidakis@gmail.com>
+Date:   Fri Dec 20 13:48:46 2013 +0200
+
+    Add collection_select for sub in Line
+
+commit d3a458ef9cd912384e12c49200bfc6cb538c1607
+Author: PAPIDAKI <papidakis@gmail.com>
+Date:   Wed Dec 18 17:39:31 2013 +0200
+
+    v2delete
+
+commit 57278dae989007bfdee2626c342c2a8e0e3d3b5b
+Author: PAPIDAKI <papidakis@gmail.com>
+Date:   Tue Dec 10 11:33:16 2013 +0200
+
+    add totals calc on index for growers and groups
+
+

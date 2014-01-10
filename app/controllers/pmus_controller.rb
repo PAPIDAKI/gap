@@ -19,7 +19,8 @@ class PmusController < ApplicationController
   def create
     @pmu=@grower.pmus.new(pmu_params)
     @pmu.save
-    redirect_to grower_pmus_path(@grower)
+    #redirect_to grower_pmus_path(@grower)
+    redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
   end
 
   # GET /pmus/1/edit
@@ -37,7 +38,9 @@ class PmusController < ApplicationController
   def update
     @pmu=Pmu.find(params[:id])
     @pmu.update(pmu_params)
-    redirect_to grower_pmus_path(@grower)
+    #redirect_to grower_pmus_path(@grower)
+    redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
+    
   end
 
   # DELETE /pmus/1
@@ -45,7 +48,8 @@ class PmusController < ApplicationController
   def destroy
     @pmu=Pmu.find(params[:id])
     @pmu.destroy
-    redirect_to grower_pmus_path(@grower)
+    #redirect_to grower_pmus_path(@grower)
+    redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
   end
 
   private

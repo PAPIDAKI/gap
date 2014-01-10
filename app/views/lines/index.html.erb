@@ -1,11 +1,10 @@
-<%= link_to "Back to Grower",grower_pmu_path(2,21) %>
+<%= link_to "Back to Grower Dashboard",grower_pmu_path(@pmu.grower_id,@pmu) %>
 <h3>Phyto Protection  for  <%=@pmu.location %></h3>
 
 <table>
   <thead>
     <tr>
       <th>Date</th>
-      <th>Pmu</th>
       <th>Substance</th>
       <th>Quantity</th>
       <th>Reasoning</th>
@@ -21,15 +20,14 @@
     <% @lines.each do |line| %>
       <tr>
         <td><%= line.date %></td>
-        <td><%= line.pmu.location %></td>
         <td><%= line.sub.name %></td>
         <td><%= line.quantity %></td>
         <td><%= line.reasoning %></td>
         <td><%= line.operator %></td>
         <td><%= line.tech_advisor %></td>
-        <td><%= link_to'Show'%></td>
-        <td><%= link_to 'Edit'%></td>
-        <td><%= link_to 'Destroy', "#", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+        <td><%= link_to 'Edit',edit_pmu_line_path(@pmu,line)%></td>
+        <td><%= link_to 'Destroy', pmu_line_path(@pmu,line), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Line', new_pmu_line_path(@pmu) %>
+<%= link_to 'Add another Phyto Protection', new_pmu_line_path(@pmu) %>

@@ -48,7 +48,7 @@
     @line=@pmu.lines.find(params[:id])
     respond_to do |format|
       if @line.update(line_params)
-        format.html { redirect_to @line, notice: 'Line was successfully updated.' }
+        format.html { redirect_to pmu_lines_path(@pmu), notice: 'Phyto Protection  was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -61,10 +61,8 @@
   # DELETE /lines/1.json
   def destroy
     @line.destroy
-    respond_to do |format|
-      format.html { redirect_to lines_url }
-      format.json { head :no_content }
-    end
+    redirect_to pmu_lines_path
+    
   end
 
   private

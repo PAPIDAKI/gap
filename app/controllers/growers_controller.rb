@@ -17,9 +17,9 @@ class GrowersController < ApplicationController
 	end
 
 	def update
-		@grower=Grower.find(params[:id])
+		@grower=@group.growers.find(params[:id])
 		@grower.update(grower_params)
-		redirect_to group_growers_path
+		redirect_to group_grower_path(@group,@grower)
 	end
 
 	def new
