@@ -43,9 +43,11 @@
 
 <hr>
 <%= link_to "Add Phyto Protection",new_pmu_line_path(@pmu)%>
-<%= link_to "Add Fertilizer","#"%>
+<%= link_to "Add Fertilizer",new_pmu_fertilizer_path(@pmu)%>
 <%= link_to "Add Irigation",new_pmu_irrigation_path(@pmu)%>
+
 <hr>
 <%=link_to "Phyto Protection Log",pmu_lines_path(@pmu)%>
-
+<%=link_to "Fertilizing Log",pmu_fertilizers_path(@pmu)%>
 <%=link_to "Irrigation Log",pmu_irrigations_path(@pmu)%>
+<hr>

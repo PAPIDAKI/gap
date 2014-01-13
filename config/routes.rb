@@ -1,5 +1,7 @@
 Gap::Application.routes.draw do
-  resources :irrigations
+  resources :fertilizers
+
+  #resources :irrigations
 
   #resources :lines
 

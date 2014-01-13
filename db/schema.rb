@@ -11,52 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102162425) do
-
-  create_table "chems", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "felines", force: true do |t|
-    t.integer  "pmu_id"
-    t.integer  "fe_id"
-    t.date     "date"
-    t.string   "operator"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140113081539) do
 
   create_table "fertilizers", force: true do |t|
-    t.string   "trade_name"
-    t.string   "composition"
-    t.string   "justification"
-    t.string   "application_method"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "fertlines", force: true do |t|
     t.integer  "pmu_id"
-    t.integer  "fert_id"
+    t.integer  "sub_id"
     t.date     "date"
     t.float    "quantity"
-    t.string   "app_method"
+    t.string   "reasoning"
     t.string   "operator"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ferts", force: true do |t|
-    t.string   "name"
-    t.integer  "phi"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "fes", force: true do |t|
-    t.string   "name"
+    t.string   "tech_advisor"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -147,19 +111,6 @@ ActiveRecord::Schema.define(version: 20140102162425) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "grower_id"
-  end
-
-  create_table "pp_line_items", force: true do |t|
-    t.date     "date"
-    t.string   "quantity"
-    t.string   "justification"
-    t.string   "application_machinery"
-    t.string   "operator"
-    t.string   "tech_approval"
-    t.integer  "pmu_id",                limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "pp_id"
   end
 
   create_table "pps", force: true do |t|

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pmu:</strong>
+  <%= @fertilizer.pmu_id %>
+</p>
+
+<p>
+  <strong>Sub:</strong>
+  <%= @fertilizer.sub_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @fertilizer.date %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @fertilizer.quantity %>
+</p>
+
+<p>
+  <strong>Reasoning:</strong>
+  <%= @fertilizer.reasoning %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @fertilizer.operator %>
+</p>
+
+<p>
+  <strong>Tech advisor:</strong>
+  <%= @fertilizer.tech_advisor %>
+</p>
+
+<%= link_to 'Edit', edit_fertilizer_path(@fertilizer) %> |
+<%= link_to 'Back', fertilizers_path %>
