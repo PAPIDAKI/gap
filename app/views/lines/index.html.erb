@@ -27,7 +27,8 @@
         <td><%= line.tech_advisor %></td>
        
         <td><%= link_to 'Edit',edit_pmu_line_path(@pmu,line)%></td>
-        <td><%= link_to 'Destroy', pmu_line_path(@pmu,line), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', pmu_line_path(@pmu,line),method: :delete %></td>
+       
       </tr>
     <% end %>
   </tbody>
@@ -35,4 +36,4 @@
 
 <br>
 
-<%= link_to 'Add another Phyto Protection', new_pmu_line_path(@pmu) %>
+<%= link_to 'Add Phyto Protection', new_pmu_line_path(@pmu) %>

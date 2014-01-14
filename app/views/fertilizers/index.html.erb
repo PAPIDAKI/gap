@@ -28,9 +28,9 @@
         <td><%= fertilizer.reasoning %></td>
         <td><%= fertilizer.operator %></td>
         <td><%= fertilizer.tech_advisor %></td>
-        <td><%= link_to 'Show', fertilizer %></td>
-        <td><%= link_to 'Edit', edit_fertilizer_path(fertilizer) %></td>
-        <td><%= link_to 'Destroy', fertilizer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+        <td><%= link_to 'Edit', edit_pmu_fertilizer_path(@pmu,fertilizer) %></td>
+        <td><%= link_to 'Destroy', pmu_fertilizer_path(@pmu,fertilizer), method: :delete  %></td>
       </tr>
     <% end %>
   </tbody>

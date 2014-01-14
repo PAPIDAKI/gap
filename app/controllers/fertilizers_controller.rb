@@ -47,7 +47,7 @@ class FertilizersController < ApplicationController
   def update
     respond_to do |format|
       if @fertilizer.update(fertilizer_params)
-        format.html { redirect_to @fertilizer, notice: 'Fertilizer was successfully updated.' }
+        format.html { redirect_to pmu_fertilizers_path, notice: 'Fertilizer was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,12 +59,13 @@ class FertilizersController < ApplicationController
   # DELETE /fertilizers/1
   # DELETE /fertilizers/1.json
   def destroy
+    @pmu=Pmu.find(params[:pmu_id])
+    @fertilizer=Fertilizer.find(params[:id])
     @fertilizer.destroy
-    respond_to do |format|
-      format.html { redirect_to fertilizers_url }
-      format.json { head :no_content }
-    end
+    redirect_to pmu_fertilizers_path
+
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

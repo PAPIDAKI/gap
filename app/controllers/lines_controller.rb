@@ -60,8 +60,11 @@
   # DELETE /lines/1
   # DELETE /lines/1.json
   def destroy
+    @line=Line.find(params[:id])
     @line.destroy
+    
     redirect_to pmu_lines_path
+
     
   end
 
