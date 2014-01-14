@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113081539) do
+ActiveRecord::Schema.define(version: 20140114072526) do
 
   create_table "fertilizers", force: true do |t|
     t.integer  "pmu_id"
@@ -70,8 +70,6 @@ ActiveRecord::Schema.define(version: 20140113081539) do
   end
 
   create_table "lines", force: true do |t|
-    t.integer  "pmu_id",       limit: 255
-    t.integer  "sub_id",       limit: 255
     t.date     "date"
     t.float    "quantity"
     t.string   "reasoning"
@@ -79,6 +77,8 @@ ActiveRecord::Schema.define(version: 20140113081539) do
     t.string   "tech_advisor"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pmu_id"
+    t.integer  "sub_id"
   end
 
   create_table "payments", force: true do |t|

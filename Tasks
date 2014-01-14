@@ -13,4 +13,26 @@ Tag actions
 Log entries
 Print outs and pdf's 
 
+The mvp should 
+
+log in log out 
+ save your work as  a user
+ make your work as a user private from other users (consultant)
+crud groups
+	crud growers
+		crud pmus
+			crud fert actions
+			crud pp actions
+			crud irrigation actions
+		crud payments
+print a pdf with all the above 
+make calculations on the group 
+make calulations on dates phi days left 
+present growers on a map
+pre make distance calculations
+comunicate sms and email  with the group growers 
+
+load a cl in csv and build a system from there onwards 
+
+
 
