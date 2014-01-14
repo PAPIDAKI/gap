@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :sub_id,"Substance" %>
-    <%= f.collection_select :sub_id, Sub.all,:id,:sub_id %> 
+    <%= f.collection_select :sub_id, Sub.all,:id,:name %> 
   </div>
   <div class="field">
     <%= f.label :quantity %>
@@ -41,5 +41,6 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+    <%=link_to "Cancel",pmu_lines_path %>
   </div>
 <% end %>

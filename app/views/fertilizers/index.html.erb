@@ -1,4 +1,6 @@
-<h1>Listing fertilizers</h1>
+<%=link_to "<< Back to Grower Dashboard",grower_pmu_path(@pmu.grower_id,@pmu)%>
+
+<h3>Listing fertilizers for <%=link_to(@pmu.location,grower_pmu_path(@pmu.grower_id,@pmu))%></h3>
 
 <table>
   <thead>
@@ -36,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Fertilizer', new_fertilizer_path %>
+<%= link_to 'New Fertilizer', new_pmu_fertilizer_path %>

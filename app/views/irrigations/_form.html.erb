@@ -16,7 +16,7 @@
   </div>
   
   <div class="field">
-    <%= f.label :date %>
+  <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">
@@ -35,5 +35,6 @@
  
   <div class="actions">
     <%= f.submit %>
+    <%=link_to "Cancel",pmu_irrigations_path %>
   </div>
 <% end %>
