@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140120111707) do
 
   create_table "facilitations", force: true do |t|
     t.integer  "pmu_id"
-    t.string   "facility_id"
+    t.integer   "facility_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

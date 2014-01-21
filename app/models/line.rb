@@ -10,10 +10,6 @@ class Line < ActiveRecord::Base
 		(line.clear_date(line)-Date.today).to_i
 	end
 
-	def clean?
-		
-			line.days_to_clear==0
-		
-	end
+	
 
 end
