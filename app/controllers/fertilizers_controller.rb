@@ -59,7 +59,7 @@ class FertilizersController < ApplicationController
   # DELETE /fertilizers/1
   # DELETE /fertilizers/1.json
   def destroy
-    @pmu=Pmu.find(params[:pmu_id])
+   
     @fertilizer=Fertilizer.find(params[:id])
     @fertilizer.destroy
     redirect_to pmu_fertilizers_path

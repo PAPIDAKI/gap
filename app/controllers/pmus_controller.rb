@@ -36,7 +36,9 @@ class PmusController < ApplicationController
   # PATCH/PUT /pmus/1
   # PATCH/PUT /pmus/1.json
   def update
+
     @pmu=Pmu.find(params[:id])
+
     @pmu.update(pmu_params)
     #redirect_to grower_pmus_path(@grower)
     redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
@@ -60,7 +62,7 @@ class PmusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pmu_params
-      params.require(:pmu).permit(:produce, :variety, :location, :nearest_village, :address, :plantation_year, :number_of_trees, :area, :expected_production)
+      params.require(:pmu).permit(:produce, :variety, :location, :nearest_village, :address, :plantation_year, :number_of_trees, :area, :expected_production,:latitude,:longitude,:ggcert,:ehd,facility_ids:[])
     end
 
     def load_grower

@@ -62,7 +62,6 @@
   def destroy
     @line=Line.find(params[:id])
     @line.destroy
-    
     redirect_to pmu_lines_path
 
     
@@ -76,6 +75,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_params
-      params.require(:line).permit(:pmu_id, :sub_id, :date, :quantity, :reasoning, :operator, :tech_advisor)
+      params.require(:line).permit(:pmu_id, :sub_id, :date, :quantity, :reasoning, :operator, :tech_advisor,:phi)
     end
  end

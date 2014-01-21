@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114072526) do
+ActiveRecord::Schema.define(version: 20140120111707) do
+
+  create_table "facilitations", force: true do |t|
+    t.integer  "pmu_id"
+    t.string   "facility_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facilities", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "fertilizers", force: true do |t|
     t.integer  "pmu_id"
@@ -79,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140114072526) do
     t.datetime "updated_at"
     t.integer  "pmu_id"
     t.integer  "sub_id"
+    t.integer  "phi"
   end
 
   create_table "payments", force: true do |t|
@@ -111,6 +125,10 @@ ActiveRecord::Schema.define(version: 20140114072526) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "grower_id"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.date     "ehd"
+    t.boolean  "ggcert"
   end
 
   create_table "pps", force: true do |t|

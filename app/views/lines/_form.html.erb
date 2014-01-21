@@ -24,6 +24,10 @@
     <%= f.collection_select :sub_id, Sub.all,:id,:name %> 
   </div>
   <div class="field">
+    <%= f.label :phi %>
+    <%= f.text_field :phi %>
+  </div>
+  <div class="field">
     <%= f.label :quantity %>
     <%= f.text_field :quantity %>
   </div>

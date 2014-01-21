@@ -1,4 +1,4 @@
-<%= link_to "Back to Grower Dashboard",grower_pmu_path(@pmu.grower_id,@pmu) %>
+<%= link_to "Back to Grower",grower_pmu_path(@pmu.grower_id,@pmu) %>
 <h3>Phyto Protection  for  <%=@pmu.location %></h3>
 
 <table>
@@ -6,10 +6,14 @@
     <tr>
       <th>Date</th>
       <th>Substance</th>
+      <th>phi</th>
+      <th>Clear Date</th>
+      <th>Clean Status</th>
       <th>Quantity</th>
       <th>Reasoning</th>
       <th>Operator</th>
       <th>Tech advisor</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,14 +25,21 @@
       <tr>
         <td><%= line.date %></td>
         <td><%= line.sub.name %></td>
+        <td><%= line.phi %></td>
+        <td><%= line.clear_date(line)%></td>
+        <td><%= pp_status(line)%></td>
+
+
         <td><%= line.quantity %></td>
         <td><%= line.reasoning %></td>
         <td><%= line.operator %></td>
         <td><%= line.tech_advisor %></td>
        
-        <td><%= link_to 'Edit',edit_pmu_line_path(@pmu,line)%></td>
-        <td><%= link_to 'Delete', pmu_line_path(@pmu,line),method: :delete %></td>
        
+
+        
+        <td><%= link_to 'Edit',edit_pmu_line_path(@pmu,line)%></td>
+        <td><%= link_to 'Destroy',pmu_line_path(@pmu,line), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +47,4 @@
 
 <br>
 
-<%= link_to 'Add Phyto Protection', new_pmu_line_path(@pmu) %>
+<%= link_to 'New Line', new_pmu_line_path(@pmu) %>

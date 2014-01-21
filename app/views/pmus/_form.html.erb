@@ -16,44 +16,75 @@
     <%= f.hidden_field :grower_id %>
   </div>
   <div class="field">
-    <%= f.label :produce %><br>
+    <%= f.label :address,"PMU Code" %>
+    <%= f.text_field :address  %>
+  </div>
+  <div class="field">
+    <%= f.label :produce %>
     <%= f.text_field :produce %>
   </div>
   <div class="field">
-    <%= f.label :variety %><br>
+    <%= f.label :variety %>
     <%= f.text_field :variety %>
   </div>
+
   <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+     <%=f.check_box :ggcert %>
+    <%= f.label :ggcert ,"globalGAP certification"%>
+   
   </div>
+
+  
   <div class="field">
-    <%= f.label :nearest_village %><br>
+    <%= f.label :nearest_village %>
     <%= f.text_field :nearest_village %>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :plantation_year %><br>
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  
+  <div class="field">
+    <%= f.label :plantation_year %>
     <%= f.number_field :plantation_year %>
   </div>
   <div class="field">
-    <%= f.label :number_of_trees %><br>
+    <%= f.label :number_of_trees %>
     <%= f.number_field :number_of_trees %>
   </div>
   <div class="field">
-    <%= f.label :area %><br>
+    <%= f.label :area %>
     <%= f.number_field :area %>
   </div>
   <div class="field">
-    <%= f.label :expected_production %><br>
+    <%= f.label :expected_production %>
     <%= f.number_field :expected_production %>
   </div>
+  <div class="field">
+    <%= f.label :ehd,"Est Harvest Day"%>
+    <%= f.date_select :ehd %>
+  </div>
+
+  <div class="field">
+    <% hidden_field_tag "pmu[facility_ids][]",nil %>
+    <strong>Facilities</strong><br>
+  <% Facility.all.each do |facility| %>
+    <%= check_box_tag "pmu[facility_ids][]", facility.id,@pmu.facility_ids.include?(facility.id),id: dom_id(facility)  %>
+    <%= facility.name %>
+  <% end %>
+</div>
   
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit %> 
   </div>
 <% end %>
