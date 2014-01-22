@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122112938) do
+ActiveRecord::Schema.define(version: 20140120111707) do
 
   create_table "facilitations", force: true do |t|
     t.integer  "pmu_id"
