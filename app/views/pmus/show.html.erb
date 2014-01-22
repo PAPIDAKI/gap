@@ -77,7 +77,7 @@
 
 <h3>Irrigation <%= link_to "+",new_pmu_irrigation_path(@pmu)%></h3>
 <%=render :partial=> "irrigations_list",:locals=>{:irrigations=>Irrigation.find_all_by_pmu_id(@pmu.id)} %>
-
+<hr>
 <%=link_to "Phyto Protection Log",pmu_lines_path(@pmu)%>
 <%=link_to "Fertilizing Log",pmu_fertilizers_path(@pmu)%>
 <%=link_to "Irrigation Log",pmu_irrigations_path(@pmu)%>

@@ -12,9 +12,9 @@
 		<tbody>
 		<tr>
 			<td><%=i.date%></td>
-			<td><%=i.duration%></td>
-			<td><%=i.quantity%></td>
-			<td><%=i.operator%></td>
+			<td><%=i.duration%> </td>
+			<td><%=i.quantity%> </td>
+			<td><%=i.operator%> </td>
 			<td><%=link_to"Edit",edit_pmu_irrigation_path(@pmu,i)%></td>
 			<td><%=link_to "Delete",pmu_irrigation_path(@pmu,i),method: :delete%></td>
 		</tr>
