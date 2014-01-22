@@ -11,6 +11,25 @@ class PmusController < ApplicationController
   
   def show
         @pmu=@grower.pmus.find(params[:id])
+        respond_to do |format|
+          format.html
+          format.pdf do
+            pdf =Prawn::Document.new
+            pdf.text "Hello World"
+            pdf.text "Coloring in <color rgb='FF00FF'>both RGB</color> " +
+ "<color c='100' m='0' y='0' k='0'>and CMYK</color>",
+ :inline_format => true
+
+pdf.text "This an external link to the " +
+ "<u><link href='https://github.com/prawnpdf/prawn/wiki'>Prawn wiki" +
+ "</link></u> and this is a link to the " +
+ "<u><link anchor='Text Reference'>Text Reference</link></u> anchor",
+ :inline_format => true
+
+            send_data pdf.render
+          end
+        end
+
   end
 
   def new

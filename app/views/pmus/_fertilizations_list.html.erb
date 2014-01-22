@@ -1,0 +1,35 @@
+<table>
+  <thead>
+    <tr>
+      <th>Pmu</th>
+      <th>Sub</th>
+      <th>Date</th>
+      <th>Quantity</th>
+      <th>Reasoning</th>
+      <th>Operator</th>
+      <th>Tech advisor</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% fertilizers.each do |fertilizer| %>
+      <tr>
+        <td><%= fertilizer.pmu_id %></td>
+        <td><%= fertilizer.sub_id %></td>
+        <td><%= fertilizer.date %></td>
+        <td><%= fertilizer.quantity %></td>
+        <td><%= fertilizer.reasoning %></td>
+        <td><%= fertilizer.operator %></td>
+        <td><%= fertilizer.tech_advisor %></td>
+       
+        <td><%= link_to 'Edit', edit_pmu_fertilizer_path(@pmu,fertilizer) %></td>
+        <td><%= link_to 'Destroy', pmu_fertilizer_path(@pmu,fertilizer), method: :delete  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

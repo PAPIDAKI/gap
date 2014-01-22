@@ -11,16 +11,7 @@
   <%= @pmu.variety %>
 </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @pmu.location %>
 
-  <strong>Nearest village:</strong>
-  <%= @pmu.nearest_village %>
-
-  <strong>Address:</strong>
-  <%= @pmu.address %>
-</p>
 
 <p>
   <strong>Plantation year:</strong>
@@ -43,12 +34,27 @@
   <% end%>
 </ul>
 
-<%= link_to 'Edit', edit_grower_pmu_path(@grower,@pmu) %> |
 
-<%= link_to 'Back', grower_pmus_path(@grower,@pmu) %>
-<hr>
+
+<p>
+  <strong>Location:</strong>
+  <%= @pmu.location %>
+
+  <strong>Nearest village:</strong>
+  <%= @pmu.nearest_village %>
+
+  <strong>Address:</strong>
+  <%= @pmu.address %>
+</p>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=true&zoom=16&markers=#{@pmu.latitude}%2C#{@pmu.longitude}" %>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&maptype=satellite&zoom=18&markers=#{@pmu.latitude}%2C#{@pmu.longitude}" %>
+<p>
+  <br>
+  <%= link_to 'Edit', edit_grower_pmu_path(@grower,@pmu) %> |
+
+<%= link_to 'Back', grower_pmus_path(@grower,@pmu) %>
+
+</p>
 
 
 
@@ -60,12 +66,18 @@
    <%end %>
 </ul>
 
-<hr>
-<%= link_to "Add Phyto Protection",new_pmu_line_path(@pmu)%>
-<%= link_to "Add Fertilizer",new_pmu_fertilizer_path(@pmu)%>
-<%= link_to "Add Irigation",new_pmu_irrigation_path(@pmu)%>
+
 
 <hr>
+<h3>Phyto Protection <%= link_to "+",new_pmu_line_path(@pmu)%></h3>
+<%=render :partial=> "pp_list",:locals=>{:lines=>Line.find_all_by_pmu_id(@pmu.id)} %>
+
+<h3>Fertilization <%= link_to "+",new_pmu_fertilizer_path(@pmu)%></h3>
+<%=render :partial=> "fertilizations_list",:locals=>{:fertilizers=>Fertilizer.find_all_by_pmu_id(@pmu.id)} %>
+
+<h3>Irrigation <%= link_to "+",new_pmu_irrigation_path(@pmu)%></h3>
+<%=render :partial=> "irrigations_list",:locals=>{:irrigations=>Irrigation.find_all_by_pmu_id(@pmu.id)} %>
+
 <%=link_to "Phyto Protection Log",pmu_lines_path(@pmu)%>
 <%=link_to "Fertilizing Log",pmu_fertilizers_path(@pmu)%>
 <%=link_to "Irrigation Log",pmu_irrigations_path(@pmu)%>
