@@ -29,7 +29,9 @@
 
 <b>Facilities</b>
 <ul>
- 
+ <% @pmu.facilities.each do|facility|%>
+  <li><%=facility.name%></li>
+  <% end%>
 </ul>
 
 
