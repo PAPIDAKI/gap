@@ -2,8 +2,10 @@
 
 one:
   pmu_id: 1
-  facility_id: MyString
+  ,: MyString
+  facility_id: 1
 
 two:
   pmu_id: 1
-  facility_id: MyString
+  ,: MyString
+  facility_id: 1
