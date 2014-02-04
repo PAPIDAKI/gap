@@ -11,7 +11,11 @@ end
 
 gem 'devise'
 gem 'geocoder'
+gem 'gmaps4rails'
 gem 'prawn'
+gem 'paperclip', '~> 3.0'
+gem 'aws-sdk'
+
 
 
 # Use SCSS for stylesheets
