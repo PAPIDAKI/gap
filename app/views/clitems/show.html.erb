@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @clitem.number %>
+</p>
+
+<p>
+  <strong>Module:</strong>
+  <%= @clitem.module %>
+</p>
+
+
+
+<p>
+  <strong>About:</strong>
+  <%= @clitem.about %>
+</p>
+
+<p>
+  <strong>For:</strong>
+  <%= @clitem.for %>
+</p>
+
+<p>
+  <strong>Control point:</strong>
+  <%= @clitem.control_point %>
+</p>
+
+<p>
+  <strong>Compliance criteria:</strong>
+  <%= @clitem.compliance_criteria %>
+</p>
+
+<%= link_to 'Edit', edit_clitem_path(@clitem) %> |
+<%= link_to 'Back', clitems_path %>

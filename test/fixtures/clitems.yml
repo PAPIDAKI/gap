@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  module: MyString
+  area: MyString
+  about: MyString
+  for: MyString
+  control_point: MyString
+  compliance_criteria: MyString
+
+two:
+  number: MyString
+  module: MyString
+  area: MyString
+  about: MyString
+  for: MyString
+  control_point: MyString
+  compliance_criteria: MyString

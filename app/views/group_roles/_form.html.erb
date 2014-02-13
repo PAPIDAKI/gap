@@ -1,0 +1,33 @@
+<%= form_for(@group_role) do |f| %>
+  <% if @group_role.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group_role.errors.count, "error") %> prohibited this group_role from being saved:</h2>
+
+      <ul>
+      <% @group_role.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :job_description %><br>
+    <%= f.text_area :job_description %>
+  </div>
+  <div class="field">
+    <%= f.label :reports_to %><br>
+    <%= f.text_field :reports_to %>
+  </div>
+  <div class="field">
+    <%= f.label :supervisor_to %><br>
+    <%= f.text_field :supervisor_to %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

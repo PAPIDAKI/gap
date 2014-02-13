@@ -1,0 +1,45 @@
+<h1>Listing clitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Module</th>
+     
+      <th>About</th>
+      <th>For</th>
+      <th>Control point</th>
+      <th>Compliance criteria</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clitems.each do |clitem| %>
+      <tr>
+        <td><%= clitem.number %></td>
+        <td><%= clitem.module %></td>
+       
+        <td><%= clitem.about %></td>
+        <td><%= clitem.for %></td>
+        <td><%= clitem.control_point %></td>
+        <td><%= clitem.compliance_criteria %></td>
+        <td><%= link_to 'Show', clitem %></td>
+        <td><%= link_to 'Edit', edit_clitem_path(clitem) %></td>
+        <td><%= link_to 'Destroy', clitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clitem', new_clitem_path %>
+<h5>Import Checklist in csv format</h5>
+<%=form_tag import_clitems_path,multipart: true do%>
+<%=file_field_tag :file%>
+<%=submit_tag "Import"%>
+<% end %>
+

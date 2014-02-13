@@ -1,4 +1,11 @@
 Gap::Application.routes.draw do
+  resources :group_roles
+
+  resources :clitems do
+    collection{post :import}
+  end
+
+
   resources :facilities
 
   resources :fertilizers

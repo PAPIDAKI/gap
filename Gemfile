@@ -15,6 +15,7 @@ gem 'gmaps4rails'
 gem 'prawn'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk'
+gem 'roo'
 
 
 

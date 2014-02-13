@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127104559) do
+ActiveRecord::Schema.define(version: 20140211122442) do
+
+  create_table "clitems", force: true do |t|
+    t.string   "number"
+    t.string   "module"
+    t.string   "about"
+    t.string   "for"
+    t.string   "control_point"
+    t.string   "compliance_criteria"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "facilitations", force: true do |t|
     t.integer  "pmu_id"
@@ -41,6 +51,28 @@ ActiveRecord::Schema.define(version: 20140127104559) do
     t.string   "reasoning"
     t.string   "operator"
     t.string   "tech_advisor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ggcls", force: true do |t|
+    t.string   "number"
+    t.string   "module"
+    t.string   "for"
+    t.string   "about"
+    t.string   "control_point"
+    t.string   "compliance_criteria"
+    t.string   "level"
+    t.boolean  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "group_roles", force: true do |t|
+    t.string   "title"
+    t.text     "job_description"
+    t.string   "reports_to"
+    t.string   "supervisor_to"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -141,6 +173,16 @@ ActiveRecord::Schema.define(version: 20140127104559) do
   create_table "pps", force: true do |t|
     t.string   "name"
     t.integer  "phi"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "title"
+    t.string   "j"
+    t.text     "job_description"
+    t.string   "reports_to"
+    t.string   "superevisor_to"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

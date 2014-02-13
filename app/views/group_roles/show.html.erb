@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @group_role.title %>
+</p>
+
+<p>
+  <strong>Job description:</strong>
+  <%= @group_role.job_description %>
+</p>
+
+<p>
+  <strong>Reports to:</strong>
+  <%= @group_role.reports_to %>
+</p>
+
+<p>
+  <strong>Supervisor to:</strong>
+  <%= @group_role.supervisor_to %>
+</p>
+
+<%= link_to 'Edit', edit_group_role_path(@group_role) %> |
+<%= link_to 'Back', group_roles_path %>

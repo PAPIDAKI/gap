@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module LinesHelper - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/helpers/lines_helper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-pp_status">#pp_status</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./Tasks.html">Tasks</a>
+  
+    <li class="file"><a href="./app/models/fertLine.html">fertLine</a>
+  
+    <li class="file"><a href="./config/git saves.html">git saves</a>
+  
+    <li class="file"><a href="./public/robots_txt.html">robots</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="./Gap.html">Gap</a>
+  
+    <li><a href="./Gap/Application.html">Gap::Application</a>
+  
+    <li><a href="./AddColumnToGrowers.html">AddColumnToGrowers</a>
+  
+    <li><a href="./AddColumnsToGroups.html">AddColumnsToGroups</a>
+  
+    <li><a href="./AddGrowerIdToPmus.html">AddGrowerIdToPmus</a>
+  
+    <li><a href="./AddIdcolumnsToLines.html">AddIdcolumnsToLines</a>
+  
+    <li><a href="./AddLogLatEhdGgcertToPmus.html">AddLogLatEhdGgcertToPmus</a>
+  
+    <li><a href="./AddPhiToLines.html">AddPhiToLines</a>
+  
+    <li><a href="./AddPmuIdToFacilitations.html">AddPmuIdToFacilitations</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Clitem.html">Clitem</a>
+  
+    <li><a href="./ClitemTest.html">ClitemTest</a>
+  
+    <li><a href="./ClitemsController.html">ClitemsController</a>
+  
+    <li><a href="./ClitemsControllerTest.html">ClitemsControllerTest</a>
+  
+    <li><a href="./ClitemsHelper.html">ClitemsHelper</a>
+  
+    <li><a href="./ClitemsHelperTest.html">ClitemsHelperTest</a>
+  
+    <li><a href="./CreateClitems.html">CreateClitems</a>
+  
+    <li><a href="./CreateFacilitations.html">CreateFacilitations</a>
+  
+    <li><a href="./CreateFacilities.html">CreateFacilities</a>
+  
+    <li><a href="./CreateFertilizers.html">CreateFertilizers</a>
+  
+    <li><a href="./CreateGroups.html">CreateGroups</a>
+  
+    <li><a href="./CreateGrowers.html">CreateGrowers</a>
+  
+    <li><a href="./CreateIrrigations.html">CreateIrrigations</a>
+  
+    <li><a href="./CreateLines.html">CreateLines</a>
+  
+    <li><a href="./CreatePmus.html">CreatePmus</a>
+  
+    <li><a href="./CreateSubs.html">CreateSubs</a>
+  
+    <li><a href="./DeviseCreateUsers.html">DeviseCreateUsers</a>
+  
+    <li><a href="./DropFacilitations.html">DropFacilitations</a>
+  
+    <li><a href="./Facilitation.html">Facilitation</a>
+  
+    <li><a href="./FacilitationTest.html">FacilitationTest</a>
+  
+    <li><a href="./FacilitiesController.html">FacilitiesController</a>
+  
+    <li><a href="./FacilitiesControllerTest.html">FacilitiesControllerTest</a>
+  
+    <li><a href="./FacilitiesHelper.html">FacilitiesHelper</a>
+  
+    <li><a href="./FacilitiesHelperTest.html">FacilitiesHelperTest</a>
+  
+    <li><a href="./Facility.html">Facility</a>
+  
+    <li><a href="./FacilityTest.html">FacilityTest</a>
+  
+    <li><a href="./Fertilizer.html">Fertilizer</a>
+  
+    <li><a href="./FertilizerTest.html">FertilizerTest</a>
+  
+    <li><a href="./FertilizersController.html">FertilizersController</a>
+  
+    <li><a href="./FertilizersControllerTest.html">FertilizersControllerTest</a>
+  
+    <li><a href="./FertilizersHelper.html">FertilizersHelper</a>
+  
+    <li><a href="./FertilizersHelperTest.html">FertilizersHelperTest</a>
+  
+    <li><a href="./Group.html">Group</a>
+  
+    <li><a href="./GroupTest.html">GroupTest</a>
+  
+    <li><a href="./GroupsController.html">GroupsController</a>
+  
+    <li><a href="./GroupsControllerTest.html">GroupsControllerTest</a>
+  
+    <li><a href="./GroupsHelper.html">GroupsHelper</a>
+  
+    <li><a href="./GroupsHelperTest.html">GroupsHelperTest</a>
+  
+    <li><a href="./Grower.html">Grower</a>
+  
+    <li><a href="./GrowerTest.html">GrowerTest</a>
+  
+    <li><a href="./GrowersController.html">GrowersController</a>
+  
+    <li><a href="./GrowersControllerTest.html">GrowersControllerTest</a>
+  
+    <li><a href="./GrowersHelper.html">GrowersHelper</a>
+  
+    <li><a href="./GrowersHelperTest.html">GrowersHelperTest</a>
+  
+    <li><a href="./Irrigation.html">Irrigation</a>
+  
+    <li><a href="./IrrigationsController.html">IrrigationsController</a>
+  
+    <li><a href="./IrrigationsHelper.html">IrrigationsHelper</a>
+  
+    <li><a href="./Line.html">Line</a>
+  
+    <li><a href="./LineTest.html">LineTest</a>
+  
+    <li><a href="./LinesController.html">LinesController</a>
+  
+    <li><a href="./LinesControllerTest.html">LinesControllerTest</a>
+  
+    <li><a href="./LinesHelper.html">LinesHelper</a>
+  
+    <li><a href="./LinesHelperTest.html">LinesHelperTest</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Pmu.html">Pmu</a>
+  
+    <li><a href="./PmuTest.html">PmuTest</a>
+  
+    <li><a href="./PmusController.html">PmusController</a>
+  
+    <li><a href="./PmusControllerTest.html">PmusControllerTest</a>
+  
+    <li><a href="./PmusHelper.html">PmusHelper</a>
+  
+    <li><a href="./PmusHelperTest.html">PmusHelperTest</a>
+  
+    <li><a href="./RemoveAreaColumnFromClitem.html">RemoveAreaColumnFromClitem</a>
+  
+    <li><a href="./RemoveColumn.html">RemoveColumn</a>
+  
+    <li><a href="./RemovePmuIdFromFacilitations.html">RemovePmuIdFromFacilitations</a>
+  
+    <li><a href="./StaticPagesController.html">StaticPagesController</a>
+  
+    <li><a href="./StaticPagesHelper.html">StaticPagesHelper</a>
+  
+    <li><a href="./Sub.html">Sub</a>
+  
+    <li><a href="./SubTest.html">SubTest</a>
+  
+    <li><a href="./SubsController.html">SubsController</a>
+  
+    <li><a href="./SubsControllerTest.html">SubsControllerTest</a>
+  
+    <li><a href="./SubsHelper.html">SubsHelper</a>
+  
+    <li><a href="./SubsHelperTest.html">SubsHelperTest</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserTest.html">UserTest</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module LinesHelper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-pp_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pp_status</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pp_status-source">
+            <pre><span class="ruby-comment"># File app/helpers/lines_helper.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_status</span>(<span class="ruby-identifier">line</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">days_to_clear</span>(<span class="ruby-identifier">line</span>)<span class="ruby-operator">&lt;</span><span class="ruby-value">0</span>
+                <span class="ruby-string">&quot;Clean&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">line</span>.<span class="ruby-identifier">days_to_clear</span>(<span class="ruby-identifier">line</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pp_status-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pp_status-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

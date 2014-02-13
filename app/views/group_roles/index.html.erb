@@ -1,0 +1,33 @@
+<h1>Listing group_roles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Job description</th>
+      <th>Reports to</th>
+      <th>Supervisor to</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_roles.each do |group_role| %>
+      <tr>
+        <td><%= group_role.title %></td>
+        <td><%= group_role.job_description %></td>
+        <td><%= group_role.reports_to %></td>
+        <td><%= group_role.supervisor_to %></td>
+        <td><%= link_to 'Show', group_role %></td>
+        <td><%= link_to 'Edit', edit_group_role_path(group_role) %></td>
+        <td><%= link_to 'Destroy', group_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group role', new_group_role_path %>

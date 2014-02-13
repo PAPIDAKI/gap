@@ -1,0 +1,42 @@
+<%= form_for(@clitem) do |f| %>
+  <% if @clitem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clitem.errors.count, "error") %> prohibited this clitem from being saved:</h2>
+
+      <ul>
+      <% @clitem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :module %><br>
+    <%= f.text_field :module %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :about %><br>
+    <%= f.text_field :about %>
+  </div>
+  <div class="field">
+    <%= f.label :for %><br>
+    <%= f.text_field :for %>
+  </div>
+  <div class="field">
+    <%= f.label :control_point %><br>
+    <%= f.text_field :control_point %>
+  </div>
+  <div class="field">
+    <%= f.label :compliance_criteria %><br>
+    <%= f.text_field :compliance_criteria %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

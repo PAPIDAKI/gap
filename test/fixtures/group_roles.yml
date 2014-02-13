@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  job_description: MyText
+  reports_to: MyString
+  supervisor_to: MyString
+
+two:
+  title: MyString
+  job_description: MyText
+  reports_to: MyString
+  supervisor_to: MyString
