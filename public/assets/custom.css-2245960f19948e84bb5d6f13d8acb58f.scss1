@@ -52,7 +52,7 @@ footer{
 }
 
 footer a{
-  color: #555;
+  color: #444;
   padding-right: 20px;
 }
 
