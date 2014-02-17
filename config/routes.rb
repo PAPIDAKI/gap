@@ -1,4 +1,8 @@
 Gap::Application.routes.draw do
+  resources :instructions
+
+  resources :roles
+
   resources :group_roles
 
   resources :clitems do

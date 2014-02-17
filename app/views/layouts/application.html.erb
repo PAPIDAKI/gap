@@ -45,15 +45,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Gap</a>
+           </a>
+           <a class="brand" href="#">Gap</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Link1", "/path1"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
-            <div id="user_nav">
+            <div id="user_nav" class = 'pull-right'>
                 <% if user_signed_in? %>
                 Logged in as <strong><%=current_user.email%></strong>
                 <%=link_to "Edit Profile",edit_user_registration_path%>
@@ -79,8 +79,8 @@
         </div>
       </div><!--/row-->
 
-      <footer>
-        <p>&copy; Company 2014</p>
+      <footer style="color:#F0F0F0;background:#237CBE;">
+        <p>&copy; instaGAP 2014</p>
       </footer>
 
     </div> <!-- /container -->
