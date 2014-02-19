@@ -1,5 +1,5 @@
 Gap::Application.routes.draw do
-  resources :instructions
+  
 
   resources :roles
 
@@ -7,6 +7,7 @@ Gap::Application.routes.draw do
 
   resources :clitems do
     collection{post :import}
+    resources :instructions
   end
 
 

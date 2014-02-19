@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140217143732) do
+ActiveRecord::Schema.define(version: 20140218144841) do
 
   create_table "clitems", force: true do |t|
     t.string   "number"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20140217143732) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "clitem_id"
   end
 
   create_table "irrigations", force: true do |t|

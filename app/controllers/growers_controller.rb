@@ -12,7 +12,7 @@ class GrowersController < ApplicationController
 	end
 
 	def edit
-		@grower=Grower.find(params[:id])
+		@grower=@group.growers.find(params[:id])
 
 	end
 

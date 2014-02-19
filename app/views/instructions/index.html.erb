@@ -1,27 +1,23 @@
-<h1>Listing instructions</h1>
+<h1>Listing of  instructions for <%=@clitem.number%></h1>
+<h5>Compliance Criteria  for <%=@clitem.about%> </h5> <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<%=@clitem.compliance_criteria%>
 
-  <tbody>
+  
+      <h4>Instruction </h4>
+  
+
+  <ul>
     <% @instructions.each do |instruction| %>
-      <tr>
-        <td><%= instruction.description %></td>
-        <td><%= link_to 'Show', instruction %></td>
-        <td><%= link_to 'Edit', edit_instruction_path(instruction) %></td>
-        <td><%= link_to 'Destroy', instruction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li>
+        <%= instruction.description %>
+        <%= link_to 'Edit', edit_clitem_instruction_path(@clitem,instruction)  %>
+        <%= link_to 'Destroy',[@clitem,instruction],method: :delete, data: { confirm: 'Are you sure?' }  %>
+      </li>
     <% end %>
-  </tbody>
+  </ul>
 </table>
 
 <br>
 
-<%= link_to 'New Instruction', new_instruction_path %>
+<%= link_to 'New Instruction',new_clitem_instruction_path(@clitem) %>

@@ -4,7 +4,8 @@ class InstructionsController < ApplicationController
   # GET /instructions
   # GET /instructions.json
   def index
-    @instructions = Instruction.all
+    @clitem=Clitem.find(params[:clitem_id])
+    @instructions = @clitem.instructions
   end
 
   # GET /instructions/1
@@ -14,21 +15,27 @@ class InstructionsController < ApplicationController
 
   # GET /instructions/new
   def new
-    @instruction = Instruction.new
+    @clitem=Clitem.find(params[:clitem_id])
+    @instruction = @clitem.instructions.new
   end
 
   # GET /instructions/1/edit
   def edit
+    @clitem=Clitem.find(params[:clitem_id])
+    @instruction=@clitem.instructions.find(params[:id])
+
   end
 
   # POST /instructions
   # POST /instructions.json
   def create
-    @instruction = Instruction.new(instruction_params)
+    @clitem=Clitem.find(params[:clitem_id])
+
+    @instruction = @clitem.instructions.new(instruction_params)
 
     respond_to do |format|
       if @instruction.save
-        format.html { redirect_to @instruction, notice: 'Instruction was successfully created.' }
+        format.html { redirect_to clitem_instructions_path, notice: 'Instruction was successfully created.' }
         format.json { render action: 'show', status: :created, location: @instruction }
       else
         format.html { render action: 'new' }
@@ -40,9 +47,12 @@ class InstructionsController < ApplicationController
   # PATCH/PUT /instructions/1
   # PATCH/PUT /instructions/1.json
   def update
+
+    @clitem=Clitem.find(params[:clitem_id])
+    @instruction=@clitem.instructions.find(params[:id])
     respond_to do |format|
       if @instruction.update(instruction_params)
-        format.html { redirect_to @instruction, notice: 'Instruction was successfully updated.' }
+        format.html { redirect_to  clitem_instructions_path(@clitem,@instruction), notice: 'Instruction was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -51,14 +61,14 @@ class InstructionsController < ApplicationController
     end
   end
 
-  # DELETE /instructions/1
-  # DELETE /instructions/1.json
+  
   def destroy
-    @instruction.destroy
-    respond_to do |format|
-      format.html { redirect_to instructions_url }
-      format.json { head :no_content }
-    end
+    @clitem=Clitem.find(params[:clitem_id])
+    @instruction=Instruction.find(params[:id])
+    @instruction.delete
+    redirect_to clitem_instructions_path
+    
+    
   end
 
   private

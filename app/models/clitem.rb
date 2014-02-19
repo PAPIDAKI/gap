@@ -1,4 +1,5 @@
 class Clitem < ActiveRecord::Base
+	  has_many :instructions, dependent: :destroy
 	
 
 
