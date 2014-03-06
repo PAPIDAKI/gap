@@ -1,4 +1,4 @@
-<h1>Listing of  instructions for <%=@clitem.number%></h1>
+<h1>Listing of  Instructions for <%=@clitem.number%></h1>
 <h5>Compliance Criteria  for <%=@clitem.about%> </h5> <br>
 
 <%=@clitem.compliance_criteria%>
@@ -21,3 +21,6 @@
 <br>
 
 <%= link_to 'New Instruction',new_clitem_instruction_path(@clitem) %>
+<br>
+<br/>
+<%=link_to '<<Back to Global Gap Check List ',clitems_path(@clitem)%>

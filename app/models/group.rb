@@ -4,4 +4,6 @@ class Group < ActiveRecord::Base
 	has_many :lines, through: :pmus
 	has_many :subs,through: :lines
 
+	belongs_to :user
+
 end

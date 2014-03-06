@@ -4,7 +4,8 @@ class ClitemsController < ApplicationController
   # GET /clitems
   # GET /clitems.json
   def index
-    @clitems = Clitem.all
+    @clitems = Clitem.all(:order=>"number")
+
   end
 
   def import
