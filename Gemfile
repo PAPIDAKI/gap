@@ -16,6 +16,7 @@ gem 'prawn'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk'
 gem 'roo'
+gem 'will_paginate', '~> 3.0'
 
 
 
