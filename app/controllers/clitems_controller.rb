@@ -4,7 +4,7 @@ class ClitemsController < ApplicationController
   # GET /clitems
   # GET /clitems.json
   def index
-    @clitems = Clitem.order("number ASC").page(params[:page]).per_page(3)
+    @clitems = Clitem.order("module ASC").page(params[:page]).per_page(3)
 
   end
 
@@ -16,6 +16,9 @@ class ClitemsController < ApplicationController
   # GET /clitems/1
   # GET /clitems/1.json
   def show
+    @clitems = Clitem.order("number ASC").page(params[:page]).per_page(1)
+
+
   end
 
   # GET /clitems/new
@@ -66,6 +69,8 @@ class ClitemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

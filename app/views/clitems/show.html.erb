@@ -1,39 +1,59 @@
-<p id="notice"><%= notice %></p>
-
+<%=link_to "<< Previous",@clitem.previous %> | 
+<%=link_to "Next >>",@clitem.next %>
 <p>
-  <strong>Number:</strong>
-  <%= @clitem.number %>
+  Number:
+  <strong>
+    <%= @clitem.number %>
+  </strong>
 </p>
 
 <p>
-  <strong>Module:</strong>
-  <%= @clitem.module %>
+  Module:
+  <strong>
+    <%= @clitem.module %>
+  </strong>
 </p>
 
 
 
 <p>
-  <strong>About:</strong>
-  <%= @clitem.about %>
+  About:
+  <strong>
+    <%= @clitem.about %>
+  </strong>
 </p>
 
 <p>
-  <strong>For:</strong>
-  <%= @clitem.for %>
+  For:
+  <strong>
+    <%= @clitem.for %>
+  </strong>
 </p>
 
 <p>
   <strong>Control point:</strong>
+  <br>
   <%= @clitem.control_point %>
 </p>
 
 <p>
   <strong>Compliance criteria:</strong>
+  <br>
   <%= @clitem.compliance_criteria %>
 </p>
 
 <%= link_to 'Edit', edit_clitem_path(@clitem) %> |
 <%= link_to 'Back', clitems_path %>
 <hr>
+<%=render  partial:"instruction_list",locals:{instructions:Instruction.find_all_by_clitem_id(@clitem.id)} %>
 <%=link_to 'Add an Instruction +', new_clitem_instruction_path(@clitem)%>
+
+
+<hr>
+<%=link_to 'Add a Procedure +'%>
+<hr>
+<%=link_to 'Add a Managment Plan'%>
+<hr>
+<%=link_to 'Add a Risk Analysis'%>
+<hr>
 

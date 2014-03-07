@@ -33,6 +33,14 @@ class Clitem < ActiveRecord::Base
 	  else raise "Unknown file type: #{file.original_filename}"
 	  end
 	end
+
+	def next
+    Clitem.where("id > ?",self.id).order("id ASC").first ||Clitem.first
+  	end
+
+  def previous
+     Clitem.where("id < ?",self.id).order("id DESC").first || Clitem.last
+  end
 	
 end
 

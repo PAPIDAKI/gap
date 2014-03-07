@@ -35,7 +35,7 @@ class InstructionsController < ApplicationController
 
     respond_to do |format|
       if @instruction.save
-        format.html { redirect_to clitem_instructions_path, notice: 'Instruction was successfully created.' }
+        format.html { redirect_to clitem_instructions_path(@clitem), notice: 'Instruction was successfully created.' }
         format.json { render action: 'show', status: :created, location: @instruction }
       else
         format.html { render action: 'new' }
@@ -52,7 +52,7 @@ class InstructionsController < ApplicationController
     @instruction=@clitem.instructions.find(params[:id])
     respond_to do |format|
       if @instruction.update(instruction_params)
-        format.html { redirect_to  clitem_instructions_path(@clitem,@instruction), notice: 'Instruction was successfully updated.' }
+        format.html { redirect_to  clitem_path(@clitem), notice: 'Instruction was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -66,7 +66,7 @@ class InstructionsController < ApplicationController
     @clitem=Clitem.find(params[:clitem_id])
     @instruction=Instruction.find(params[:id])
     @instruction.delete
-    redirect_to clitem_instructions_path
+    redirect_to clitem_path(@clitem)
     
     
   end

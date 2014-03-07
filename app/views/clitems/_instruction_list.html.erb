@@ -1,0 +1,14 @@
+<h5>Instructions</h5>
+
+  <ul>
+    <% instructions.each do |instruction| %>
+      <li>
+        <%= instruction.description %>
+        <%= link_to 'Edit', edit_clitem_instruction_path(@clitem,instruction)  %>
+        <%= link_to 'Destroy',[@clitem,instruction],method: :delete, data: { confirm: 'Are you sure?' }  %>
+      </li>
+    <% end %>
+  </ul>
+
+<br>
+
