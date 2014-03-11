@@ -1,6 +1,10 @@
 Gap::Application.routes.draw do
   
 
+  resources :steps
+
+  resources :procedures
+
   resources :roles
 
   resources :group_roles

@@ -4,7 +4,7 @@ class ClitemsController < ApplicationController
   # GET /clitems
   # GET /clitems.json
   def index
-    @clitems = Clitem.order("module ASC").page(params[:page]).per_page(3)
+    @clitems = Clitem.order("module ASC").page(params[:page]).per_page(20)
 
   end
 

@@ -1,5 +1,7 @@
 class Clitem < ActiveRecord::Base
 	  has_many :instructions, dependent: :destroy
+	  has_many :procedures,   dependent: :destroy
+	  has_many :steps ,through: :procedures
 	
 
 

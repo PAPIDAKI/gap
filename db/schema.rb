@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224172748) do
+ActiveRecord::Schema.define(version: 20140307135629) do
 
   create_table "clitems", force: true do |t|
     t.string   "number"
@@ -173,12 +173,34 @@ ActiveRecord::Schema.define(version: 20140224172748) do
     t.datetime "updated_at"
   end
 
+  create_table "procedures", force: true do |t|
+    t.string   "title"
+    t.string   "result"
+    t.string   "accountable"
+    t.integer  "clitem_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "procedures", ["clitem_id"], name: "index_procedures_on_clitem_id"
+
   create_table "roles", force: true do |t|
     t.string   "title"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "steps", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "step_accountable"
+    t.integer  "procedure_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "steps", ["procedure_id"], name: "index_steps_on_procedure_id"
 
   create_table "subs", force: true do |t|
     t.string   "name"

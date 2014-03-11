@@ -1,3 +1,3 @@
 class Instruction < ActiveRecord::Base
-	belongs_to :clitem ,dependent: :destroy 
+	belongs_to :clitem 
 end
