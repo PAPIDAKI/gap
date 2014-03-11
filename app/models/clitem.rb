@@ -19,7 +19,7 @@ class Clitem < ActiveRecord::Base
 
        clitem = find_by_number(row["number"]) || new
        parameters = ActionController::Parameters.new(row.to_hash)
-       clitem.update(parameters.permit(:number,:module,:about,:for,:control_point,:compliance_criteria))
+       clitem.update(parameters.permit(:number,:module,:about,:for,:control_point,:compliance_criteria,:level))
        #accessible_attributes=[:number,:for,:about]
        #clitem.attributes = row.to_hash.slice(:module)
        clitem.save!

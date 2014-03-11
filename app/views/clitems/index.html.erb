@@ -12,6 +12,7 @@
       <th>For</th>
       <th>Control point</th>
       <th>Compliance criteria</th>
+      <th>Level</th>
       <th></th>
       <th></th>
       <th></th>
@@ -28,6 +29,7 @@
         <td><%= clitem.for %></td>
         <td><%= clitem.control_point %></td>
         <td><%= clitem.compliance_criteria %></td>
+        <td><%=clitem.level %></td>
         <td><%= link_to 'Show', clitem %></td>
         <td><%= link_to 'Edit', edit_clitem_path(clitem) %></td>
         <td><%= link_to 'Destroy', clitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>

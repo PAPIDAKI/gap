@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307135629) do
+ActiveRecord::Schema.define(version: 20140311100539) do
 
   create_table "clitems", force: true do |t|
     t.string   "number"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140307135629) do
     t.string   "compliance_criteria"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "level"
   end
 
   create_table "facilitations", force: true do |t|

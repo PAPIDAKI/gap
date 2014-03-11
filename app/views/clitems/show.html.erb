@@ -41,6 +41,11 @@
   <br>
   <%= @clitem.compliance_criteria %>
 </p>
+<p>
+  Level:
+  <br>
+  <strong><%= @clitem.level %></strong>
+</p>
 
 <%= link_to 'Edit', edit_clitem_path(@clitem) %> |
 <%= link_to 'Back', clitems_path %>
