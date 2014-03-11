@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20140311100539) do
 
   create_table "clitems", force: true do |t|
-    t.string   "number"
-    t.string   "module"
-    t.string   "about"
-    t.string   "for"
-    t.string   "control_point"
-    t.string   "compliance_criteria"
+    t.text     "number"
+    t.text     "module"
+    t.text     "about"
+    t.text     "for"
+    t.text     "control_point"
+    t.text     "compliance_criteria"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "level"
