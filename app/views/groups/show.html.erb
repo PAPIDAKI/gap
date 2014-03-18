@@ -1,6 +1,6 @@
 <%=link_to "<<= Back to index",groups_path %>
 
-<h2><%=@group.name%></h2> <h4><%=@group.growers.count%>  Growers  <%=@group.pmus.count%> Fields <%=@group.pmus.sum(:expected_production)%>  Tons</h4>
+<h2><%=@group.name%></h2> 
 <p>
 	<b>Address:</b><%=@group.address%>
 </p>
@@ -13,11 +13,7 @@
 <%=render  partial:"grower_list",locals:{growers:Grower.find_all_by_group_id(@group.id)} %>
 
 
-
-
+<br/>
 <p>
-	<%=link_to "Members of Group",group_growers_path(@group) %>
-</p>
-<p>
-	<%=link_to "Add New Grower",new_group_grower_path(@group)%>
+	<%=link_to "Add New Grower + ",new_group_grower_path(@group)%>
 </p>

@@ -1,5 +1,12 @@
+
+<h5>
+	<%=pluralize(@group.growers.count,"Grower")%>
+	with  
+	<%=pluralize(@group.pmus.count,"Field")%>
+	 and  an expected production of   
+	 <%=pluralize(@group.pmus.sum(:expected_production),"Ton") %> </h5>
 <table>
-	<tr><th>Name</th><th>Fields</th><th>Tons</th></tr>
+	<tr><th>Grower's Name</th><th>Number of Fields</th><th>Expected Tons</th></tr>
 
 
 	<%growers.each do |grower|%>
