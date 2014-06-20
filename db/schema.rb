@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311100539) do
+ActiveRecord::Schema.define(version: 20140324120353) do
+
+  create_table "accounts", force: true do |t|
+    t.string   "name"
+    t.string   "subdomain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "clitems", force: true do |t|
     t.string   "number"
@@ -73,7 +80,10 @@ ActiveRecord::Schema.define(version: 20140311100539) do
     t.datetime "updated_at"
     t.string   "mobile"
     t.integer  "user_id"
+    t.integer  "tenant_id"
   end
+
+  add_index "groups", ["tenant_id"], name: "index_groups_on_tenant_id"
 
   create_table "growers", force: true do |t|
     t.string   "name"
@@ -225,6 +235,13 @@ ActiveRecord::Schema.define(version: 20140311100539) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
+  create_table "tenants", force: true do |t|
+    t.string   "name"
+    t.string   "subdomain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -237,7 +254,7 @@ ActiveRecord::Schema.define(version: 20140311100539) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "updated_at"        
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

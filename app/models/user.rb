@@ -5,4 +5,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :groups 
+  #has_many :growers ,through: :groups
+
+  #after_create :send_welcome_email
+
+  private
+
+  #def send_welcome_email
+  #	Notification.new_account(self).deliver
+  #end
+
+
+
 end

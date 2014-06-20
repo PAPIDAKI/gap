@@ -1,14 +1,18 @@
 class GroupsController < ApplicationController
 
 	def index
-		@groups=Group.all
+		#@groups=Group.all
+		@groups=Group.where(user:current_user)
 		@growers=Grower.all
+
+
 		@pmus=Pmu.all
 	end
 
 	def show
 		
 		@group=Group.find(params[:id])
+		#@group=Account.find_by  subdomain! request.subdomain
 
 
 	end
@@ -28,6 +32,7 @@ class GroupsController < ApplicationController
 	end
 	def create
 		@group=Group.new(group_params)
+		@group.user_id=current_user.id
 		@group.save
 		redirect_to @group
 	end

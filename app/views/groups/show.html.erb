@@ -2,7 +2,7 @@
 
 <h2><%=@group.name%></h2> 
 <p>
-	<b>Address:</b><%=@group.address%>
+	<%=@group.address%>
 </p>
 <p>
 	<b>Phone:</b><%=@group.phone%> <b> Mobile:</b><%=@group.mobile%>
@@ -11,8 +11,6 @@
 <%=link_to"Delete Group",group_path(@group) ,method: :delete %>
 <hr>
 <%=render  partial:"grower_list",locals:{growers:Grower.find_all_by_group_id(@group.id)} %>
-
-
 <br/>
 <p>
 	<%=link_to "Add New Grower + ",new_group_grower_path(@group)%>

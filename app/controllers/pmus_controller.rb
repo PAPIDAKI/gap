@@ -38,8 +38,8 @@ pdf.text "This an external link to the " +
   def create
     @pmu=@grower.pmus.new(pmu_params)
     @pmu.save
-    #redirect_to grower_pmus_path(@grower)
-    redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
+    redirect_to grower_pmus_path(@grower,@pmu.grower_id)
+    #redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
   end
 
   # GET /pmus/1/edit
@@ -59,7 +59,7 @@ pdf.text "This an external link to the " +
     @pmu=Pmu.find(params[:id])
 
     @pmu.update(pmu_params)
-    #redirect_to grower_pmus_path(@grower)
+    #redirect_to grower_pmu_path(@grower,@pmu)
     redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
     
   end

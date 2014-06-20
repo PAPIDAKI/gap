@@ -49,13 +49,13 @@
            <a class="brand" href="#">Gap</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Users", "/path1"  %></li>
+              <li><%= link_to "Pricing", "/path2"  %></li>
+              <li><%= link_to "About Us", "/path3"  %></li>
             </ul>
             <div id="user_nav" class = 'pull-right'>
                 <% if user_signed_in? %>
-                Logged in as <strong><%=current_user.email%></strong>
+                Logged in as <strong><%=current_user.email%> <%=current_user.id%> </strong>
                 <%=link_to "Edit Profile",edit_user_registration_path%>
                 |
                 <%= link_to "Logout",destroy_user_session_path,method: :delete%>
@@ -73,7 +73,7 @@
       <div class="row-fluid">
 
        
-        <div class="span12">
+        <div >
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
