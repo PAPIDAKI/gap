@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324120353) do
+ActiveRecord::Schema.define(version: 20140704114426) do
 
-  create_table "accounts", force: true do |t|
-    t.string   "name"
-    t.string   "subdomain"
+  create_table "actions", force: true do |t|
+    t.date     "date"
+    t.string   "operator"
+    t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,6 +51,14 @@ ActiveRecord::Schema.define(version: 20140324120353) do
     t.integer  "facility_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "fertilizations", force: true do |t|
+    t.string   "brand_name"
+    t.string   "approved_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "action_id"
   end
 
   create_table "fertilizers", force: true do |t|
@@ -106,12 +116,10 @@ ActiveRecord::Schema.define(version: 20140324120353) do
     t.float    "quantity"
     t.integer  "duration"
     t.string   "operator"
-    t.integer  "pmu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "action_id"
   end
-
-  add_index "irrigations", ["pmu_id"], name: "index_irrigations_on_pmu_id"
 
   create_table "line_items", force: true do |t|
     t.string   "plant_protection_id"
@@ -138,6 +146,45 @@ ActiveRecord::Schema.define(version: 20140324120353) do
     t.integer  "sub_id"
     t.integer  "phi"
   end
+
+  create_table "logentries", force: true do |t|
+    t.integer  "pmu_id"
+    t.integer  "action_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "logentries", ["action_id"], name: "index_logentries_on_action_id"
+  add_index "logentries", ["pmu_id"], name: "index_logentries_on_pmu_id"
+
+  create_table "logs", force: true do |t|
+    t.integer  "pmu_id"
+    t.integer  "action_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "logs", ["action_id"], name: "index_logs_on_action_id"
+  add_index "logs", ["pmu_id"], name: "index_logs_on_pmu_id"
+
+  create_table "lots", force: true do |t|
+    t.integer  "lot"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "pmu_id"
+  end
+
+  add_index "lots", ["pmu_id"], name: "index_lots_on_pmu_id"
+
+  create_table "operations", force: true do |t|
+    t.integer  "pmu_id_id"
+    t.integer  "logentry_id_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "operations", ["logentry_id_id"], name: "index_operations_on_logentry_id_id"
+  add_index "operations", ["pmu_id_id"], name: "index_operations_on_pmu_id_id"
 
   create_table "payments", force: true do |t|
     t.decimal  "amount"
@@ -192,6 +239,17 @@ ActiveRecord::Schema.define(version: 20140324120353) do
   end
 
   add_index "procedures", ["clitem_id"], name: "index_procedures_on_clitem_id"
+
+  create_table "ratings", force: true do |t|
+    t.integer  "lot_id"
+    t.integer  "user_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["lot_id"], name: "index_ratings_on_lot_id"
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "title"
@@ -254,7 +312,7 @@ ActiveRecord::Schema.define(version: 20140324120353) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
-    t.datetime "updated_at"        
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
