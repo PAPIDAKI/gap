@@ -3,8 +3,7 @@ class GroupsController < ApplicationController
 	def index
 		#@groups=Group.all
 		@groups=Group.where(user:current_user)
-		@growers=Grower.all
-
+		@growers=Group.all
 
 		@pmus=Pmu.all
 	end

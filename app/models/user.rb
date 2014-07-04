@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :groups 
-  #has_many :growers ,through: :groups
+  has_many :growers ,through: :groups
 
   #after_create :send_welcome_email
 
