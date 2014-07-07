@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @maintenance.date %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @maintenance.note %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @maintenance.operator %>
+</p>
+
+<p>
+  <strong>Workers num:</strong>
+  <%= @maintenance.workers_num %>
+</p>
+
+<%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
+<%= link_to 'Back', maintenances_path %>

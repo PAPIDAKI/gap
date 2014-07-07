@@ -1,5 +1,7 @@
 class Irrigation < ActiveRecord::Base
-  belongs_to :pmu 
+
+  has_many :logs
+  has_many :pmus,through: :logs
 
   validates :date, presence: true
   validates :operator, presence: true

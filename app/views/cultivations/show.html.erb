@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cultivation.date %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @cultivation.note %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @cultivation.operator %>
+</p>
+
+<p>
+  <strong>Workers num:</strong>
+  <%= @cultivation.workers_num %>
+</p>
+
+<%= link_to 'Edit', edit_cultivation_path(@cultivation) %> |
+<%= link_to 'Back', cultivations_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@cultivation) do |f| %>
+  <% if @cultivation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cultivation.errors.count, "error") %> prohibited this cultivation from being saved:</h2>
+
+      <ul>
+      <% @cultivation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="field">
+    <%= f.label :operator %><br>
+    <%= f.text_field :operator %>
+  </div>
+  <div class="field">
+    <%= f.label :workers_num %><br>
+    <%= f.number_field :workers_num %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706143951) do
+ActiveRecord::Schema.define(version: 20140706163908) do
 
   create_table "activities", force: true do |t|
     t.date     "date"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20140706143951) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "level"
+  end
+
+  create_table "cultivations", force: true do |t|
+    t.date     "date"
+    t.text     "note"
+    t.string   "operator"
+    t.integer  "workers_num"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "facilitations", force: true do |t|
@@ -100,17 +109,24 @@ ActiveRecord::Schema.define(version: 20140706143951) do
     t.string   "operator"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "action_id"
   end
 
   create_table "logs", force: true do |t|
     t.integer  "pmu_id"
-    t.integer  "activity_id"
+    t.integer  "cultivation_id"
+    t.integer  "irrigation_id"
+    t.integer  "fertilization_id"
+    t.integer  "phyto_protection_id"
+    t.integer  "maintenance_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "logs", ["activity_id"], name: "index_logs_on_activity_id"
+  add_index "logs", ["cultivation_id"], name: "index_logs_on_cultivation_id"
+  add_index "logs", ["fertilization_id"], name: "index_logs_on_fertilization_id"
+  add_index "logs", ["irrigation_id"], name: "index_logs_on_irrigation_id"
+  add_index "logs", ["maintenance_id"], name: "index_logs_on_maintenance_id"
+  add_index "logs", ["phyto_protection_id"], name: "index_logs_on_phyto_protection_id"
   add_index "logs", ["pmu_id"], name: "index_logs_on_pmu_id"
 
   create_table "lots", force: true do |t|
@@ -121,6 +137,15 @@ ActiveRecord::Schema.define(version: 20140706143951) do
   end
 
   add_index "lots", ["pmu_id"], name: "index_lots_on_pmu_id"
+
+  create_table "maintenances", force: true do |t|
+    t.date     "date"
+    t.text     "note"
+    t.string   "operator"
+    t.integer  "workers_num"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "payments", force: true do |t|
     t.decimal  "amount"

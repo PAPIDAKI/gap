@@ -1,0 +1,33 @@
+<h1>Listing cultivations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Note</th>
+      <th>Operator</th>
+      <th>Workers num</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cultivations.each do |cultivation| %>
+      <tr>
+        <td><%= cultivation.date %></td>
+        <td><%= cultivation.note %></td>
+        <td><%= cultivation.operator %></td>
+        <td><%= cultivation.workers_num %></td>
+        <td><%= link_to 'Show', cultivation %></td>
+        <td><%= link_to 'Edit', edit_cultivation_path(cultivation) %></td>
+        <td><%= link_to 'Destroy', cultivation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cultivation', new_cultivation_path %>

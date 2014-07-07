@@ -1,6 +1,9 @@
 Gap::Application.routes.draw do
 
 
+  resources :maintenances
+  resources :cultivations
+
   #get '',to: 'groups#show',constraints:{subdomain:/.+/}
   root "static_pages#home"
   get "static_pages/about"
@@ -18,21 +21,20 @@ Gap::Application.routes.draw do
 
    resources :growers do
     resources :pmus 
-  end
+    resources :maintenances
+    resources :cultivations
+    resources :irrigations
+   end
 
 
   resources :pmus do
-    resources :lines
-    resources :fertilizers
-    resources :irrigations
+#    resources :lines
   end
 
   resources :steps
-
   resources :procedures
 
   resources :roles
-
   resources :group_roles
 
   resources :clitems do

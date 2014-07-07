@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LogsTest < ActiveSupport::TestCase
+class CultivationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
