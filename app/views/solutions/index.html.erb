@@ -1,0 +1,33 @@
+<h1>Listing solutions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Active ingredient</th>
+      <th>Application for</th>
+      <th>Recomended dosage</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solutions.each do |solution| %>
+      <tr>
+        <td><%= solution.brand %></td>
+        <td><%= solution.active_ingredient %></td>
+        <td><%= solution.application_for %></td>
+        <td><%= solution.recomended_dosage %></td>
+        <td><%= link_to 'Show', solution %></td>
+        <td><%= link_to 'Edit', edit_solution_path(solution) %></td>
+        <td><%= link_to 'Destroy', solution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solution', new_solution_path %>

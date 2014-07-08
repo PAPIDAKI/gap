@@ -1,7 +1,9 @@
 class IrrigationsController < ApplicationController
  def index
- 	@pmu=Pmu.find(params[:pmu_id])
- 	@irrigations=@pmu.irrigations
+ 	#@pmu=Pmu.find(params[:pmu_id])
+ 	#@irrigations=@pmu.irrigations
+  @grower=Grower.find(params[:id])
+  @irrigations=@grower.irrigations
  end
 
  def new

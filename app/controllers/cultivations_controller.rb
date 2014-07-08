@@ -4,7 +4,8 @@ class CultivationsController < ApplicationController
   # GET /cultivations
   # GET /cultivations.json
   def index
-    @cultivations = Cultivation.all
+    @grower=Grower.find(params[:grower_id])
+    @cultivations = @grower.cultivations
   end
 
   # GET /cultivations/1

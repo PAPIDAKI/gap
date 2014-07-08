@@ -1,8 +1,10 @@
 Gap::Application.routes.draw do
 
+  resources :solutions
 
   resources :maintenances
   resources :cultivations
+  resources :pmus
 
   #get '',to: 'groups#show',constraints:{subdomain:/.+/}
   root "static_pages#home"
@@ -15,15 +17,23 @@ Gap::Application.routes.draw do
   end
 
 
-  resources :groups do
-    resources :growers 
-   end
+  
 
    resources :growers do
     resources :pmus 
     resources :maintenances
     resources :cultivations
     resources :irrigations
+   end
+
+
+   resources :groups do
+    resources :growers do
+      resources :pmus 
+      resources :maintenances
+      resources :cultivations
+      resources :irrigations
+    end
    end
 
 

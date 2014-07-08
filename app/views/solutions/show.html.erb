@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @solution.brand %>
+</p>
+
+<p>
+  <strong>Active ingredient:</strong>
+  <%= @solution.active_ingredient %>
+</p>
+
+<p>
+  <strong>Application for:</strong>
+  <%= @solution.application_for %>
+</p>
+
+<p>
+  <strong>Recomended dosage:</strong>
+  <%= @solution.recomended_dosage %>
+</p>
+
+<%= link_to 'Edit', edit_solution_path(@solution) %> |
+<%= link_to 'Back', solutions_path %>

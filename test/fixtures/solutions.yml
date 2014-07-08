@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  active_ingredient: MyString
+  application_for: MyString
+  recomended_dosage: MyString
+
+two:
+  brand: MyString
+  active_ingredient: MyString
+  application_for: MyString
+  recomended_dosage: MyString

@@ -5,5 +5,7 @@ class Grower < ActiveRecord::Base
 	
 	has_many :pmus,dependent: :destroy
 	validates :name , presence:true
+	
+	has_many :cultivations ,dependent: :destroy
 
 end
