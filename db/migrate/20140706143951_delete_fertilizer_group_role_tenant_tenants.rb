@@ -1,8 +1,8 @@
 class DeleteFertilizerGroupRoleTenantTenants < ActiveRecord::Migration
  def up
-  	drop_table :fertilizers 
-  	drop_table :fertilizations
-  	drop_table :line_items
+  	#drop_table :fertilizers 
+  	#drop_table :fertilizations
+  	#drop_table :line_items
   	
   	#drop_table :operations
   	#drop_table :actions

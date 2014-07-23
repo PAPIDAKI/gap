@@ -1,6 +1,12 @@
 class Pmu < ActiveRecord::Base
 	belongs_to :grower
-	validates :produce,:variety , presence:true
+	has_many :eventizations
+	has_many :events ,through: :eventizations
+
+	delegate :evcults,:evphytos,:evferts,to: :events
+	
+	
+
 
 	
 
@@ -10,12 +16,9 @@ class Pmu < ActiveRecord::Base
 	geocoded_by :nearest_village
 	after_validation :geocode ,:if=>:nearest_village_changed?
 
-	has_many :logs ,dependent: :destroy
-	has_many :irrigations ,through: :logs
-	has_many :cultivations ,through: :logs
-	has_many :fertilizations ,through: :logs
-	has_many :maintenances, through: :logs
-	has_many :phyto_protections, through: :logs
+	validates :produce,:variety , presence:true
 
+
+	
 
 end

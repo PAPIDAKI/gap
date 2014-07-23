@@ -1,0 +1,33 @@
+<h1>Listing logentries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Note</th>
+      <th>Operator</th>
+      <th>Workers</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logentries.each do |logentry| %>
+      <tr>
+        <td><%= logentry.date %></td>
+        <td><%= logentry.note %></td>
+        <td><%= logentry.operator %></td>
+        <td><%= logentry.workers %></td>
+        <td><%= link_to 'Show', logentry %></td>
+        <td><%= link_to 'Edit', edit_logentry_path(logentry) %></td>
+        <td><%= link_to 'Destroy', logentry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Logentry', new_logentry_path %>

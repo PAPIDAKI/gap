@@ -4,6 +4,7 @@ class PmusController < ApplicationController
   before_filter :load_grower
   def index
     @pmus=@grower.pmus
+
    
 
   end
@@ -35,11 +36,12 @@ pdf.text "This an external link to the " +
   def new
     @pmu =@grower.pmus.new
   end
+
   def create
     @pmu=@grower.pmus.new(pmu_params)
     @pmu.save
-    redirect_to grower_pmus_path(@grower,@pmu.grower_id)
-    #redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
+    #redirect_to grower_pmus_path(@grower,@pmu.grower_id)
+    redirect_to group_grower_path(@grower.group_id,@grower)
   end
 
   # GET /pmus/1/edit
@@ -49,7 +51,7 @@ pdf.text "This an external link to the " +
   end
 
   # POST /pmus
-  # POST /pmus.json
+  # POST /pmus.json     
   
 
   # PATCH/PUT /pmus/1
@@ -60,7 +62,7 @@ pdf.text "This an external link to the " +
 
     @pmu.update(pmu_params)
     #redirect_to grower_pmu_path(@grower,@pmu)
-    redirect_to group_grower_path(@grower.group_id,@pmu.grower_id)
+    redirect_to group_grower_path(@grower.group_id,@grower)
     
   end
 

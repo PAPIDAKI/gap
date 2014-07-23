@@ -9,6 +9,8 @@ class GrowersController < ApplicationController
 
 	def show
 		@grower=@group.growers.find(params[:id])
+		@events=@grower.events.order(:date).reverse
+
 	end
 
 	def edit

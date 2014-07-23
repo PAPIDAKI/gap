@@ -1,0 +1,15 @@
+<h3>This is the Event Show </h3>
+<p>
+	<%=link_to"Back to Field Book ", grower_events_path(@grower)%>
+</p>
+<p>
+	<%=link_to"Back to Grower", group_grower_path(@grower.group_id,@grower)%>
+</p>
+ 
+ <p><%=@event.type%></p>
+
+ <%=@event.date%><br>
+ <%=@event.note%><br>
+ <%=@event.operator%>
+
+

@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
 
 	def index
-		#@groups=Group.all
 		@groups=Group.where(user:current_user)
 		@growers=Group.all
 
@@ -9,12 +8,10 @@ class GroupsController < ApplicationController
 	end
 
 	def show
-		
 		@group=Group.find(params[:id])
-		#@group=Account.find_by  subdomain! request.subdomain
-
-
 	end
+
+
 	def edit
 		@group=Group.find(params[:id])
 	end
@@ -25,6 +22,9 @@ class GroupsController < ApplicationController
 		redirect_to group_path(@group)
 
 	end
+
+
+	
 	def new
 		@group=Group.new
 

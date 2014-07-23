@@ -69,16 +69,8 @@
 
 
 <hr>
-<h3>Phyto Protection <%= link_to "+",new_pmu_line_path(@pmu)%></h3>
-<%=render :partial=> "pp_list",:locals=>{:lines=>Line.find_all_by_pmu_id(@pmu.id)} %>
 
-<h3>Fertilization <%= link_to "+",new_pmu_fertilizer_path(@pmu)%></h3>
-<%=render :partial=> "fertilizations_list",:locals=>{:fertilizers=>Fertilizer.find_all_by_pmu_id(@pmu.id)} %>
 
-<h3>Irrigation <%= link_to "+",new_pmu_irrigation_path(@pmu)%></h3>
-<%=render :partial=> "irrigations_list",:locals=>{:irrigations=>Irrigation.find_all_by_pmu_id(@pmu.id)} %>
-<hr>
-<%=link_to "Phyto Protection Log",pmu_lines_path(@pmu)%>
-<%=link_to "Fertilizing Log",pmu_fertilizers_path(@pmu)%>
-<%=link_to "Irrigation Log",pmu_irrigations_path(@pmu)%>
+
+
 <hr>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @logentry.date %>
+</p>
+
+<div>
+  Fields (Pmus):
+  <ul>
+    <%@pmus.each do |pmu| %>
+    <li><%=pmu.location%></li>
+    <%end%>
+  </ul>
+</div>
+
+<p>
+  <strong>Note:</strong>
+  <%= @logentry.note %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @logentry.operator %>
+</p>
+
+<p>
+  <strong>Workers:</strong>
+  <%= @logentry.workers %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_logentry_path(@logentry) %> |
+<%= link_to 'Back', logentries_path %>

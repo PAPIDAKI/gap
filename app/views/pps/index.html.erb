@@ -1,0 +1,29 @@
+<h1>Listing pps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Logentry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pps.each do |pp| %>
+      <tr>
+        <td><%= pp.quantity %></td>
+        <td><%= pp.logentry %></td>
+        <td><%= link_to 'Show', pp %></td>
+        <td><%= link_to 'Edit', edit_pp_path(pp) %></td>
+        <td><%= link_to 'Destroy', pp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pp', new_pp_path %>

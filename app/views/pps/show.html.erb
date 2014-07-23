@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @pp.quantity %>
+</p>
+
+<p>
+  <strong>Logentry:</strong>
+  <%= @pp.logentry %>
+</p>
+
+<%= link_to 'Edit', edit_pp_path(@pp) %> |
+<%= link_to 'Back', pps_path %>

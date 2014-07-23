@@ -1,0 +1,25 @@
+<%= form_for(@pp) do |f| %>
+  <% if @pp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pp.errors.count, "error") %> prohibited this pp from being saved:</h2>
+
+      <ul>
+      <% @pp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :logentry_id %><br>
+    <%= f.text_field :logentry_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

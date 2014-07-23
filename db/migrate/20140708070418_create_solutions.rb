@@ -4,7 +4,9 @@ class CreateSolutions < ActiveRecord::Migration
       t.string :brand
       t.string :active_ingredient
       t.string :application_for
+      t.integer :phi
       t.string :recomended_dosage
+
 
       t.timestamps
     end

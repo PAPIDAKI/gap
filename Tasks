@@ -1,3 +1,71 @@
+
+=>Convert to psql
+=>add hstore 
+XXXX Add ap NoCompatible r4
+  Log Book
+  	=>Model event(date (pmu_ids)  note operator fields) 
+	=>pmu -> eventize ->Events
+
+	=>single controller and routing
+	  =>Index all etc 
+	  		?????Q rename type in local languages 
+	  new action (check boxes )
+	  show action
+	  forms 
+	  phi calculations 
+
+   
+   Geocoding
+   Lot
+   	starrating
+  Sidebar
+  Dashboard
+  GroupOveralls
+  Users
+  Invitations
+  	Mailers
+  Printing
+  SystemBuilder
+  Multitenancy
+
+  living badget
+  mort 700
+  rates300
+  utils500
+  assist500
+  Hersonissos600
+  Car400
+  KidsSchool1000
+  Kids lessons500
+  Livingexp1000
+  insurance 350
+   6k basic per month
+
+   72 k per year 
+   20 prop tax
+   30 incom tax
+   122
+
+   60+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Add long and lat fields 
 Add geo location 
 

@@ -11,17 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706163908) do
+ActiveRecord::Schema.define(version: 20140719050020) do
 
-  create_table "activities", force: true do |t|
-    t.date     "date"
-    t.text     "note"
-    t.string   "operator"
-    t.integer  "num_workers"
-    t.string   "type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "clitems", force: true do |t|
     t.string   "number"
@@ -44,6 +38,29 @@ ActiveRecord::Schema.define(version: 20140706163908) do
     t.datetime "updated_at"
   end
 
+  create_table "eventizations", force: true do |t|
+    t.integer  "pmu_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "eventizations", ["event_id"], name: "index_eventizations_on_event_id", using: :btree
+  add_index "eventizations", ["pmu_id"], name: "index_eventizations_on_pmu_id", using: :btree
+
+  create_table "events", force: true do |t|
+    t.date     "date"
+    t.text     "note"
+    t.string   "operator"
+    t.hstore   "fields"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "type"
+    t.integer  "grower_id"
+  end
+
+  add_index "events", ["fields"], name: "index_events_on_fields", using: :gin
+
   create_table "facilitations", force: true do |t|
     t.integer  "pmu_id"
     t.integer  "facility_id"
@@ -53,13 +70,6 @@ ActiveRecord::Schema.define(version: 20140706163908) do
 
   create_table "facilities", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "facs", force: true do |t|
-    t.integer  "pmu_id"
-    t.integer  "facility_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,10 +91,7 @@ ActiveRecord::Schema.define(version: 20140706163908) do
     t.datetime "updated_at"
     t.string   "mobile"
     t.integer  "user_id"
-    t.integer  "tenant_id"
   end
-
-  add_index "groups", ["tenant_id"], name: "index_groups_on_tenant_id"
 
   create_table "growers", force: true do |t|
     t.string   "name"
@@ -107,59 +114,38 @@ ActiveRecord::Schema.define(version: 20140706163908) do
     t.float    "quantity"
     t.integer  "duration"
     t.string   "operator"
+    t.integer  "pmu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "irrigations", ["pmu_id"], name: "index_irrigations_on_pmu_id", using: :btree
+
+  create_table "logentries", force: true do |t|
+    t.date     "date"
+    t.text     "note"
+    t.string   "operator"
+    t.integer  "workers"
+    t.integer  "pmu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "logs", force: true do |t|
     t.integer  "pmu_id"
-    t.integer  "cultivation_id"
-    t.integer  "irrigation_id"
-    t.integer  "fertilization_id"
-    t.integer  "phyto_protection_id"
-    t.integer  "maintenance_id"
+    t.integer  "logentry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "logs", ["cultivation_id"], name: "index_logs_on_cultivation_id"
-  add_index "logs", ["fertilization_id"], name: "index_logs_on_fertilization_id"
-  add_index "logs", ["irrigation_id"], name: "index_logs_on_irrigation_id"
-  add_index "logs", ["maintenance_id"], name: "index_logs_on_maintenance_id"
-  add_index "logs", ["phyto_protection_id"], name: "index_logs_on_phyto_protection_id"
-  add_index "logs", ["pmu_id"], name: "index_logs_on_pmu_id"
-
-  create_table "lots", force: true do |t|
-    t.integer  "lot"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "pmu_id"
-  end
-
-  add_index "lots", ["pmu_id"], name: "index_lots_on_pmu_id"
+  add_index "logs", ["logentry_id"], name: "index_logs_on_logentry_id", using: :btree
+  add_index "logs", ["pmu_id"], name: "index_logs_on_pmu_id", using: :btree
 
   create_table "maintenances", force: true do |t|
     t.date     "date"
     t.text     "note"
     t.string   "operator"
     t.integer  "workers_num"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "payments", force: true do |t|
-    t.decimal  "amount"
-    t.string   "note"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "plant_protections", force: true do |t|
-    t.string   "trade_name"
-    t.string   "active_ingredient"
-    t.integer  "phi"
-    t.string   "justification"
-    t.string   "application_method"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -184,11 +170,13 @@ ActiveRecord::Schema.define(version: 20140706163908) do
   end
 
   create_table "pps", force: true do |t|
-    t.string   "name"
-    t.integer  "phi"
+    t.string   "quantity"
+    t.integer  "logentry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "pps", ["logentry_id"], name: "index_pps_on_logentry_id", using: :btree
 
   create_table "procedures", force: true do |t|
     t.string   "title"
@@ -199,24 +187,24 @@ ActiveRecord::Schema.define(version: 20140706163908) do
     t.datetime "updated_at"
   end
 
-  add_index "procedures", ["clitem_id"], name: "index_procedures_on_clitem_id"
-
-  create_table "ratings", force: true do |t|
-    t.integer  "lot_id"
-    t.integer  "user_id"
-    t.integer  "score"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ratings", ["lot_id"], name: "index_ratings_on_lot_id"
-  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
+  add_index "procedures", ["clitem_id"], name: "index_procedures_on_clitem_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "title"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "solutions", force: true do |t|
+    t.string   "brand"
+    t.string   "active_ingredient"
+    t.string   "application_for"
+    t.integer  "phi"
+    t.string   "recomended_dosage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "pp_id"
   end
 
   create_table "steps", force: true do |t|
@@ -228,31 +216,13 @@ ActiveRecord::Schema.define(version: 20140706163908) do
     t.datetime "updated_at"
   end
 
-  add_index "steps", ["procedure_id"], name: "index_steps_on_procedure_id"
+  add_index "steps", ["procedure_id"], name: "index_steps_on_procedure_id", using: :btree
 
   create_table "subs", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "taggings", force: true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       limit: 128
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-
-  create_table "tags", force: true do |t|
-    t.string "name"
-  end
-
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -269,7 +239,7 @@ ActiveRecord::Schema.define(version: 20140706163908) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

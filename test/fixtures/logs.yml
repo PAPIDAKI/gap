@@ -2,16 +2,8 @@
 
 one:
   pmu_id: 
-  cultivation_id: 
-  irrigation_id: 
-  fertilization_id: 
-  phyto_protection_id: 
-  maintenance_id: 
+  logentry_id: 
 
 two:
   pmu_id: 
-  cultivation_id: 
-  irrigation_id: 
-  fertilization_id: 
-  phyto_protection_id: 
-  maintenance_id: 
+  logentry_id: 

@@ -1,10 +1,65 @@
 Gap::Application.routes.draw do
 
-  resources :solutions
 
-  resources :maintenances
-  resources :cultivations
-  resources :pmus
+
+
+  
+  resources :growers do
+     resources :events
+     get 'events/evcults'=>"events#index" ,scope:"evcults"
+     get 'events/evferts'=>"events#index" ,scope:'evferts'
+     get 'events/evphytos'=>"events#index" ,scope: 'evphytos'
+
+     
+     resources :evcults,controller:'events',type:'Evcult'
+     resources :evphytos,controller:'events',type:'Evphyto'
+     resources :evferts,controller:'events',type: 'Evfert'
+
+
+
+    resources :logentries
+    resources :pmus 
+    
+   end
+
+
+
+
+  resources :groups do
+    resources :growers do
+      resources :pmus
+      
+      get 'events/evcults'=>"events#index" ,scope:"evcults"
+      get 'events/evferts'=>"events#index" ,scope:'evferts'
+      get 'events/evphytos'=>"events#index" ,scope: 'evphytos'
+      resources :events
+
+     
+
+    end
+   end 
+  
+   resources :events
+      get 'groups/growers/events/evcults'=>"events#index" ,scope:"evcults"
+      get 'events/evferts'=>"events#index" ,scope:'evferts'
+      get 'events/evphytos'=>"events#index" ,scope: 'evphytos'
+
+  
+
+
+  
+
+  resources :growers do
+    get 'events/evcults'=>"events#index" ,scope:"evcults"
+    get 'events/evferts'=>"events#index" ,scope:'evferts'
+    get 'events/evphytos'=>"events#index" ,scope: 'evphytos'
+  end
+
+  resources :events
+  resources :evcults,controller:'events',type:'Evcult'
+  resources :evphytos,controller:'events',type:'Evphyto'
+  resources :evferts,controller:'events',type: 'Evfert'
+
 
   #get '',to: 'groups#show',constraints:{subdomain:/.+/}
   root "static_pages#home"
@@ -18,28 +73,18 @@ Gap::Application.routes.draw do
 
 
   
-
-   resources :growers do
-    resources :pmus 
-    resources :maintenances
-    resources :cultivations
-    resources :irrigations
-   end
-
-
-   resources :groups do
-    resources :growers do
-      resources :pmus 
-      resources :maintenances
-      resources :cultivations
-      resources :irrigations
-    end
-   end
+     get 'events/evcults'=>"events#index" ,scope:"evcults"
+     get 'events/evferts'=>"events#index" ,scope:'evferts'
+     get 'events/evphytos'=>"events#index" ,scope: 'evphytos'
+     resources :evcults,controller:'events',type:'Evcult'
+     resources :evphytos,controller:'events',type:'Evphyto'
+     resources :evferts,controller:'events',type: 'Evfert'
+     resources :events
 
 
-  resources :pmus do
-#    resources :lines
-  end
+
+
+
 
   resources :steps
   resources :procedures

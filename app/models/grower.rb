@@ -1,11 +1,16 @@
 class Grower < ActiveRecord::Base
-	belongs_to :group 
+	belongs_to :group 	
 
-	#belongs_to :user ,through: :group
-	
 	has_many :pmus,dependent: :destroy
-	validates :name , presence:true
+	has_many :events ,dependent: :destroy
+	delegate :evcults,:evphytos,:evferts,to: :events
+
+
 	
-	has_many :cultivations ,dependent: :destroy
+
+
+	
+
+	
 
 end
