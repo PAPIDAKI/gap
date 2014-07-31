@@ -2,9 +2,10 @@ class GroupsController < ApplicationController
 
 	def index
 		@groups=Group.where(user:current_user)
-		@growers=Group.all
-
+		@growers=Grower.all
 		@pmus=Pmu.all
+
+		
 	end
 
 	def show
@@ -24,7 +25,7 @@ class GroupsController < ApplicationController
 	end
 
 
-	
+
 	def new
 		@group=Group.new
 

@@ -1,4 +1,4 @@
-<h2>New <%=@event.type%> -Event form</h2>
+<h2>New <%=@event.type%></h2>
 
 <%= form_for([@grower,@event]) do |f| %>
   <% if @event.errors.any? %>
@@ -14,11 +14,9 @@
   <% end %>
 
 
-=========
-
   
    <div>
-     <%= f.text_field :type %>
+     <%= f.hidden_field :type %>
   </div>
   
 
@@ -34,6 +32,11 @@
   <div class="field">
     <%= f.label :note %><br>
     <%= f.text_area :note %>
+  </div>
+
+  <div class="field">
+    <%= f.label :person %><br>
+    <%= f.text_area :person %>
   </div>
 
   <div class="field">

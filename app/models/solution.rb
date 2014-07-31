@@ -1,3 +1,6 @@
 class Solution < ActiveRecord::Base
-	belongs_to :pp
+	#has_many :applications ,dependent: :destroy
+	#has_many :events,through: :applications
+	belongs_to :event 
+
 end

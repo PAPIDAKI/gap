@@ -24,6 +24,7 @@ class EventsController < ApplicationController
 		@event.type=params[:type]
 		@event.operator=@grower.name
 		@event.pmu_ids=@grower.pmu_ids
+		@event.person=1
 
 
 	end

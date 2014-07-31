@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719050020) do
+ActiveRecord::Schema.define(version: 20140731084734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "applications", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "solution_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "applications", ["event_id"], name: "index_applications_on_event_id", using: :btree
+  add_index "applications", ["solution_id"], name: "index_applications_on_solution_id", using: :btree
 
   create_table "clitems", force: true do |t|
     t.string   "number"
@@ -27,6 +37,15 @@ ActiveRecord::Schema.define(version: 20140719050020) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "level"
+  end
+
+  create_table "crops", force: true do |t|
+    t.string   "kathg"
+    t.string   "eidos"
+    t.string   "gonoma"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "general"
   end
 
   create_table "cultivations", force: true do |t|
@@ -57,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140719050020) do
     t.datetime "updated_at"
     t.string   "type"
     t.integer  "grower_id"
+    t.integer  "person"
   end
 
   add_index "events", ["fields"], name: "index_events_on_fields", using: :gin
@@ -198,13 +218,12 @@ ActiveRecord::Schema.define(version: 20140719050020) do
 
   create_table "solutions", force: true do |t|
     t.string   "brand"
-    t.string   "active_ingredient"
-    t.string   "application_for"
+    t.string   "active"
+    t.string   "reason"
     t.integer  "phi"
-    t.string   "recomended_dosage"
+    t.string   "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "pp_id"
   end
 
   create_table "steps", force: true do |t|

@@ -4,6 +4,10 @@ Gap::Application.routes.draw do
 
 
   
+  resources :crops do 
+    collection{post :import}
+  end
+
   resources :growers do
      resources :events
      get 'events/evcults'=>"events#index" ,scope:"evcults"
