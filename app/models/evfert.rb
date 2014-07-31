@@ -1,0 +1,2 @@
+class Evfert < Event
+end

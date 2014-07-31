@@ -1,0 +1,2 @@
+module AstheniaHelper
+end

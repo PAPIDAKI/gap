@@ -1,0 +1,41 @@
+<h1>Crops</h1> <%=Crop.count %>
+
+<h4>Import Crops table</h4>
+<%= form_tag import_crops_path,multipart: true do%>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+
+<%end%>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Kathg</th>
+      <th>Eidos</th>
+      <th>Gonoma</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crops.each do |crop| %>
+      <tr>
+        <td><%=crop.id%></td>
+        <td><%= crop.kathg %></td>
+        <td><%= crop.eidos %></td>
+        <td><%= crop.gonoma %></td>
+        <td><%= link_to 'Show', crop %></td>
+        <td><%= link_to 'Edit', edit_crop_path(crop) %></td>
+        <td><%= link_to 'Destroy', crop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crop', new_crop_path %>

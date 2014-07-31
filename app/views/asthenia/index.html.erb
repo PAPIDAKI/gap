@@ -1,0 +1,42 @@
+<h1>Listing asthenia</h1>
+
+<h4>Import Asthenia</h4>
+<%=form_tag import_asthenia_path,multipart: true do%>
+<%= file_field_tag :file %>
+<%= submit_tag "Import" %>
+<%end%>
+
+
+ 
+  
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Code asten</th>
+      <th>Astenia</th>
+      <th>Nastenia</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @asthenia.each do |asthenium| %>
+      <tr>
+        <td><%= asthenium.code_asten %></td>
+        <td><%= asthenium.astenia %></td>
+        <td><%= asthenium.nastenia %></td>
+        <td><%= link_to 'Show', asthenium %></td>
+        <td><%= link_to 'Edit', edit_asthenium_path(asthenium) %></td>
+        <td><%= link_to 'Destroy', asthenium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Asthenium', new_asthenium_path %>

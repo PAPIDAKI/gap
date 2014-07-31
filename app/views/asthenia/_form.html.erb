@@ -1,0 +1,29 @@
+<%= form_for(@asthenium) do |f| %>
+  <% if @asthenium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asthenium.errors.count, "error") %> prohibited this asthenium from being saved:</h2>
+
+      <ul>
+      <% @asthenium.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code_asten %><br>
+    <%= f.text_field :code_asten %>
+  </div>
+  <div class="field">
+    <%= f.label :astenia %><br>
+    <%= f.text_field :astenia %>
+  </div>
+  <div class="field">
+    <%= f.label :nastenia %><br>
+    <%= f.text_field :nastenia %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

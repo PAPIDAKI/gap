@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code_asten: MyString
+  astenia: MyString
+  nastenia: MyString
+
+two:
+  code_asten: MyString
+  astenia: MyString
+  nastenia: MyString

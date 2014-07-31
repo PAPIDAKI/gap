@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kathg: MyString
+  eidos: MyString
+  gonoma: MyString
+
+two:
+  kathg: MyString
+  eidos: MyString
+  gonoma: MyString

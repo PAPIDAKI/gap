@@ -1,0 +1,9 @@
+
+PhytoProtection 
+=================
+Minagric db manipulation and import
+Steps
+Step 1.Donload and unzip file 
+Step 2.Convert file to XLS (easier to change Properties and prime keys)
+Step 3.Import XLS or CSV into instagap localy and from Heroku 
+Step 4.Thats it No seeding no tranfer etc keep a record of last update and do this once every year or six months 

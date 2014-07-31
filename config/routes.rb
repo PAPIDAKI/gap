@@ -4,6 +4,10 @@ Gap::Application.routes.draw do
 
 
   
+  resources :asthenia do
+    collection{post :import}
+  end
+
   resources :crops do 
     collection{post :import}
   end
