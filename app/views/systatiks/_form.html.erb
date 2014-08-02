@@ -1,0 +1,25 @@
+<%= form_for(@systatik) do |f| %>
+  <% if @systatik.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@systatik.errors.count, "error") %> prohibited this systatik from being saved:</h2>
+
+      <ul>
+      <% @systatik.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kodikos %><br>
+    <%= f.text_field :kodikos %>
+  </div>
+  <div class="field">
+    <%= f.label :onomadron %><br>
+    <%= f.text_field :onomadron %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

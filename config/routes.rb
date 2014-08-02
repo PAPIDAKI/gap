@@ -7,6 +7,10 @@ Gap::Application.routes.draw do
 
   
 
+  resources :systatiks do
+    collection { post :import}
+  end
+
   resources :epembashes do
     collection { post :import}
   end
