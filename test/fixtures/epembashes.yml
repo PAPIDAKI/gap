@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  farmako_id: 
+  crop: 
+  diast_pros: MyString
+  comments: MyString
+
+two:
+  farmako_id: 
+  crop: 
+  diast_pros: MyString
+  comments: MyString

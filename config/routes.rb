@@ -4,6 +4,17 @@ Gap::Application.routes.draw do
 
 
   
+
+  
+
+  resources :epembashes do
+    collection { post :import}
+  end
+
+  resources :farmakos do
+    collection { post :import }
+  end
+  
   resources :asthenia do
     collection{post :import}
   end

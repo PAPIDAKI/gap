@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gbonoma: MyString
+  emporikhon: MyString
+  hmer_egris: 2014-08-01
+  telos_egri: 2014-08-01
+
+two:
+  gbonoma: MyString
+  emporikhon: MyString
+  hmer_egris: 2014-08-01
+  telos_egri: 2014-08-01

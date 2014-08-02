@@ -1,5 +1,8 @@
 class Crop < ActiveRecord::Base
 
+	has_many :epembashes
+	has_many :farmakos ,through: :epembashes
+
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|
 			crop=find_by_id(row["id"]) || new

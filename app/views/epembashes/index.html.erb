@@ -1,0 +1,44 @@
+<h1>Listing epembashes</h1>
+<p>Epembashes <%=@epembashes.count%></p>
+
+<h4>Import Phi table</h4>
+  <%=form_tag  import_epembashes_path,multipart: true do %>
+  <%=file_field_tag :file %>
+  <%=submit_tag "Import" %>
+<%end%>
+
+
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Farmako</th>
+      <th>Crop</th>
+      <th>Diast pros</th>
+      <th>Comments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @epembashes.each do |epembash| %>
+      <tr>
+        <td><%= epembash.farmako_id %></td>
+        <td><%= epembash.crop_id %></td>
+        <td><%= epembash.diast_pros %></td>
+        <td><%= epembash.comments %></td>
+        <td><%= link_to 'Show', epembash %></td>
+        <td><%= link_to 'Edit', edit_epembash_path(epembash) %></td>
+        <td><%= link_to 'Destroy', epembash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Epembash', new_epembash_path %>

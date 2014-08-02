@@ -1,0 +1,42 @@
+<h1>Listing Farmaka</h1>
+
+<h4>Import Farmakos</h4>
+<%=form_tag import_farmakos_path,multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag "Import" %>
+<% end %>
+
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Gbonoma</th>
+      <th>Emporikhon</th>
+      <th>Hmer egris</th>
+      <th>Telos egri</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @farmakos.each do |farmako| %>
+      <tr>
+        <td><%= farmako.gbonoma %></td>
+        <td><%= farmako.emporikhon %></td>
+        <td><%= farmako.hmer_egris %></td>
+        <td><%= farmako.telos_egri %></td>
+        <td><%= link_to 'Show', farmako %></td>
+        <td><%= link_to 'Edit', edit_farmako_path(farmako) %></td>
+        <td><%= link_to 'Destroy', farmako, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Farmako', new_farmako_path %>

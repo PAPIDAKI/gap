@@ -10,7 +10,6 @@ class CropsController < ApplicationController
   def import
     Crop.import(params[:file])
     redirect_to crops_url,notice:"Crops imported!"
-
   end
 
   # GET /crops/1

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731103037) do
+ActiveRecord::Schema.define(version: 20140801201440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(version: 20140731103037) do
     t.datetime "updated_at"
   end
 
+  create_table "epembashes", force: true do |t|
+    t.integer  "farmako_id"
+    t.integer  "crop_id"
+    t.string   "diast_pros"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "epembashes", ["farmako_id"], name: "index_epembashes_on_farmako_id", using: :btree
+
   create_table "eventizations", force: true do |t|
     t.integer  "pmu_id"
     t.integer  "event_id"
@@ -98,6 +109,15 @@ ActiveRecord::Schema.define(version: 20140731103037) do
 
   create_table "facilities", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "farmakos", force: true do |t|
+    t.string   "gbonoma"
+    t.string   "emporikhon"
+    t.date     "hmer_egris"
+    t.date     "telos_egri"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

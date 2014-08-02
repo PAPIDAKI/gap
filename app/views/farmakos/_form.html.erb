@@ -1,0 +1,33 @@
+<%= form_for(@farmako) do |f| %>
+  <% if @farmako.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@farmako.errors.count, "error") %> prohibited this farmako from being saved:</h2>
+
+      <ul>
+      <% @farmako.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gbonoma %><br>
+    <%= f.text_field :gbonoma %>
+  </div>
+  <div class="field">
+    <%= f.label :emporikhon %><br>
+    <%= f.text_field :emporikhon %>
+  </div>
+  <div class="field">
+    <%= f.label :hmer_egris %><br>
+    <%= f.date_select :hmer_egris %>
+  </div>
+  <div class="field">
+    <%= f.label :telos_egri %><br>
+    <%= f.date_select :telos_egri %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

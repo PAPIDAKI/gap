@@ -1,0 +1,33 @@
+<%= form_for(@epembash) do |f| %>
+  <% if @epembash.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@epembash.errors.count, "error") %> prohibited this epembash from being saved:</h2>
+
+      <ul>
+      <% @epembash.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :farmako_id %><br>
+    <%= f.text_field :farmako_id %>
+  </div>
+  <div class="field">
+    <%= f.label :crop %><br>
+    <%= f.text_field :crop %>
+  </div>
+  <div class="field">
+    <%= f.label :diast_pros %><br>
+    <%= f.text_field :diast_pros %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_field :comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
