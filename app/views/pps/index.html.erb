@@ -1,29 +1,38 @@
 <h1>Listing pps</h1>
+<h3><%=@farmakos.count%> approved pp solutions for <%=@crop.gonoma%></h3>
 
 <table>
   <thead>
     <tr>
-      <th>Quantity</th>
-      <th>Logentry</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>CommercialName</th>
+      <th>ΓρεεκCommercialName</th>
+      <th>phi</th>
+      <th>Comments</th>
+      
+      <th>Prime igredient</th>
+      <th>Telos Egrisis</th>
+      
     </tr>
   </thead>
 
   <tbody>
-    <% @pps.each do |pp| %>
+    <% @farmakos.each do |farmako| %>
       <tr>
-        <td><%= pp.quantity %></td>
-        <td><%= pp.logentry %></td>
-        <td><%= link_to 'Show', pp %></td>
-        <td><%= link_to 'Edit', edit_pp_path(pp) %></td>
-        <td><%= link_to 'Destroy', pp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= farmako.gbonoma %></td>
+        <td><%= farmako.emporikhon %></td>
+       <td> <%= farmako.epembashes.find_by(crop_id:params[:crop_id]).diast_pros %> </td>
+       <td> <%= farmako.epembashes.find_by(crop_id:params[:crop_id]).comments %> </td>
+       <td>   </td>
+       <td> <%=farmako.telos_egri%> </td>
+       <td> </td>
+
+
     <% end %>
+      </tr>
+
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Pp', new_pp_path %>
+

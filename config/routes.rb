@@ -7,6 +7,12 @@ Gap::Application.routes.draw do
 
   
 
+  
+
+  resources :droncrops do
+    collection { post :import}
+  end
+
   resources :systatiks do
     collection { post :import}
   end
@@ -24,6 +30,7 @@ Gap::Application.routes.draw do
   end
 
   resources :crops do 
+    resources :pps
     collection{post :import}
   end
 
@@ -38,10 +45,9 @@ Gap::Application.routes.draw do
      resources :evphytos,controller:'events',type:'Evphyto'
      resources :evferts,controller:'events',type: 'Evfert'
 
-
-
     resources :logentries
     resources :pmus 
+    
     
    end
 
@@ -55,9 +61,7 @@ Gap::Application.routes.draw do
       get 'events/evcults'=>"events#index" ,scope:"evcults"
       get 'events/evferts'=>"events#index" ,scope:'evferts'
       get 'events/evphytos'=>"events#index" ,scope: 'evphytos'
-      resources :events
-
-     
+      resources :events 
 
     end
    end 

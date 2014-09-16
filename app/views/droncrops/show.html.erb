@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kodikos:</strong>
+  <%= @droncrop.kodikos %>
+</p>
+
+<p>
+  <strong>Code fyta:</strong>
+  <%= @droncrop.code_fyta %>
+</p>
+
+<p>
+  <strong>Crops:</strong>
+  <%= @droncrop.crops %>
+</p>
+
+<%= link_to 'Edit', edit_droncrop_path(@droncrop) %> |
+<%= link_to 'Back', droncrops_path %>

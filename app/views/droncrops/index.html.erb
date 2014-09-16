@@ -1,0 +1,37 @@
+<h1>Listing droncrops</h1>
+
+<h4>Import DronCrop table</h4>
+<%= form_tag import_droncrops_path,multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag "Import"%>
+<%end%>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kodikos</th>
+      <th>Code fyta</th>
+      <th>Crops</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @droncrops.each do |droncrop| %>
+      <tr>
+        <td><%= droncrop.kodikos %></td>
+        <td><%= droncrop.crop_id %></td>
+        <td><%= droncrop.crops %></td>
+        <td><%= link_to 'Show', droncrop %></td>
+        <td><%= link_to 'Edit', edit_droncrop_path(droncrop) %></td>
+        <td><%= link_to 'Destroy', droncrop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Droncrop', new_droncrop_path %>

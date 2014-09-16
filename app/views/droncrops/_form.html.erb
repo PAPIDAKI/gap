@@ -1,0 +1,29 @@
+<%= form_for(@droncrop) do |f| %>
+  <% if @droncrop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@droncrop.errors.count, "error") %> prohibited this droncrop from being saved:</h2>
+
+      <ul>
+      <% @droncrop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kodikos %><br>
+    <%= f.text_field :kodikos %>
+  </div>
+  <div class="field">
+    <%= f.label :code_fyta %><br>
+    <%= f.number_field :code_fyta %>
+  </div>
+  <div class="field">
+    <%= f.label :crops %><br>
+    <%= f.text_field :crops %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

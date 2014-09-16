@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kodikos: MyString
+  code_fyta: 1
+  crops: MyString
+
+two:
+  kodikos: MyString
+  code_fyta: 1
+  crops: MyString
