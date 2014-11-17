@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1381088286">
+    <data-source source="LOCAL" name="Rails gap: development" uuid="5c42534f-dd09-440f-bf62-fb1f5f9e277f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/gap_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails gap: test" uuid="cf8752b2-5d92-47cc-9368-7efc1d23154a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:gap_test</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

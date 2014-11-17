@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails gap: development" uuid="5c42534f-dd09-440f-bf62-fb1f5f9e277f">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+    <data-source name="Rails gap: test" uuid="cf8752b2-5d92-47cc-9368-7efc1d23154a">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+  </component>
+</project>
