@@ -5,11 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Number</th>
-      <th>Module</th>
-     
-      <th>About</th>
-      <th>For</th>
+      <th>Number</th>     
       <th>Control point</th>
       <th>Compliance criteria</th>
       <th>Level</th>
@@ -23,10 +19,6 @@
     <% @clitems.each do |clitem| %>
       <tr>
         <td><%= clitem.number %></td>
-        <td><%= clitem.module %></td>
-       
-        <td><%= clitem.about %></td>
-        <td><%= clitem.for %></td>
         <td><%= clitem.control_point %></td>
         <td><%= clitem.compliance_criteria %></td>
         <td><%=clitem.level %></td>
@@ -42,9 +34,10 @@
 <br>
 
 <%= link_to 'New Clitem', new_clitem_path %>
+
 <h5>Import Checklist in csv format</h5>
 <%=form_tag import_clitems_path,multipart: true do%>
 <%=file_field_tag :file%>
-<%=submit_tag "Import"%>
+<%=submit_tag "Import csv"%>
 <% end %>
 

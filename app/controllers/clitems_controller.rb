@@ -4,7 +4,7 @@ class ClitemsController < ApplicationController
   # GET /clitems
   # GET /clitems.json
   def index
-    @clitems = Clitem.order("module ASC").page(params[:page]).per_page(20)
+    @clitems = Clitem.order("number ASC").page(params[:page]).per_page(20)
 
   end
 
@@ -67,8 +67,11 @@ class ClitemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to clitems_url }
       format.json { head :no_content }
+
     end
   end
+
+
 
   
 
@@ -80,6 +83,6 @@ class ClitemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clitem_params
-      params.require(:clitem).permit(:number, :module, :area, :about, :for, :control_point, :compliance_criteria,:level)
+      params.require(:clitem).permit(:number,:control_point, :compliance_criteria,:level)
     end
 end

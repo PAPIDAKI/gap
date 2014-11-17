@@ -19,6 +19,6 @@ class Pmu < ActiveRecord::Base
 	validates :produce,:variety , presence:true
 
 
-	
 
 end
+

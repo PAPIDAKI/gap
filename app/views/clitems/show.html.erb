@@ -7,28 +7,6 @@
   </strong>
 </p>
 
-<p>
-  Module:
-  <strong>
-    <%= @clitem.module %>
-  </strong>
-</p>
-
-
-
-<p>
-  About:
-  <strong>
-    <%= @clitem.about %>
-  </strong>
-</p>
-
-<p>
-  For:
-  <strong>
-    <%= @clitem.for %>
-  </strong>
-</p>
 
 <p>
   <strong>Control point:</strong>
@@ -50,7 +28,7 @@
 <%= link_to 'Edit', edit_clitem_path(@clitem) %> |
 <%= link_to 'Back', clitems_path %>
 <hr>
-<%=render  partial:"instruction_list",locals:{instructions:Instruction.find_all_by_clitem_id(@clitem.id)} %>
+
 <%=link_to 'Add an Instruction +', new_clitem_instruction_path(@clitem)%>
 
 
