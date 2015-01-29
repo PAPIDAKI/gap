@@ -9,6 +9,8 @@ Gap::Application.routes.draw do
 
   
 
+  resources :projects
+
   resources :droncrops do
     collection { post :import}
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103133735) do
+ActiveRecord::Schema.define(version: 20150128090847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -241,6 +241,14 @@ ActiveRecord::Schema.define(version: 20141103133735) do
   end
 
   add_index "procedures", ["clitem_id"], name: "index_procedures_on_clitem_id", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.string   "produce"
+    t.string   "option"
+    t.text     "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "title"
