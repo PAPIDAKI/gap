@@ -9,6 +9,8 @@ Gap::Application.routes.draw do
 
   
 
+  resources :produces
+
   resources :projects
 
   resources :droncrops do

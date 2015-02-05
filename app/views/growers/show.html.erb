@@ -2,28 +2,31 @@
 <h3>Group Info</h3>
 <h5><%=@group.name%></h5>
 <hr>
-<h3>Grower Info</h3>
-<h5><%=@grower.name%></h5> 
-<p><b>Name :</b><%=@grower.name%></p>
-<p><b>Address:</b><%=@grower.address%></p>
-<p><b>Mobile:</b><%=@grower.mobile %></p>
-<p><b>GGN:</b><%=@grower.ggn%></p>
-<%=link_to "Edit", edit_group_grower_path(@group,@grower) %> | 
-<%=link_to "Delete",group_grower_path(@group,@grower),method: :delete %>
-<br><br>
+  <div>
+    <h3>Grower Info</h3>
+    <h5><%=@grower.name%></h5>
+    <p><b>Name :</b><%=@grower.name%></p>
+    <p><b>Address:</b><%=@grower.address%></p>
+    <p><b>Mobile:</b><%=@grower.mobile %></p>
+    <p><b>GGN:</b><%=@grower.ggn%></p>
+    <%=link_to "Edit", edit_group_grower_path(@group,@grower) %> |
+    <%=link_to "Delete",group_grower_path(@group,@grower),method: :delete %>
+    <br><br>
+ </div>
 <hr>
-<h3>PMUs</h3>
-<h5>Fields in Production <%=@grower.pmus.count(:expected_production) %></h5>
-<h5>Expected Production <%=@grower.pmus.sum(:expected_production)%></h5>
+  <div>
+    <h3>PMUs</h3>
+    <h5>Fields in Production <%=@grower.pmus.count(:expected_production) %></h5>
+    <h5>Expected Production <%=@grower.pmus.sum(:expected_production)%></h5>
 
-<%=render :partial=> "pmu_list",:locals=>{:pmus=>Pmu.find_all_by_grower_id(@grower.id)} %>
+    <%=render :partial=> "pmu_list",:locals=>{:pmus=>Pmu.find_all_by_grower_id(@grower.id)} %>
 
 
 
-<p>
-	<%=link_to "Add a Field ",new_grower_pmu_path(@grower)%>
-</p>
-
+    <p>
+    	<%=link_to "Add a Field ",new_grower_pmu_path(@grower)%>
+    </p>
+  </div>
 <hr>
 <h3>Logbook</h3>
 <%=link_to("Log Book",grower_events_path(@grower),class:"btn btn-link")%>

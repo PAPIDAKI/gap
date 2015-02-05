@@ -1,0 +1,27 @@
+<h1>Listing produces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @produces.each do |produce| %>
+      <tr>
+        <td><%= produce.name %></td>
+        <td><%= link_to 'Show', produce %></td>
+        <td><%= link_to 'Edit', edit_produce_path(produce) %></td>
+        <td><%= link_to 'Destroy', produce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Produce', new_produce_path %>

@@ -1,16 +1,20 @@
-
-<h5>
+<tr class="text-center">
+<h5 class="text-center">
 	<%=pluralize(@group.growers.count,"Grower")%>
 	with  
 	<%=pluralize(@group.pmus.count,"Field")%>
 	 and  an expected production of   
 	 <%=pluralize(@group.pmus.sum(:expected_production),"Ton") %> </h5>
-<table>
-	<tr><th>Grower's Name</th><th>Number of Fields</th><th>Expected Tons</th></tr>
+
+</tr>
+
+    <table class="table">
+
+      <th class="text-center">Grower's Name</th><th class="text-center">Number of Fields</th><th class="text-center">Expected Tons</th></tr>
 
 
-	<%growers.each do |grower|%>
-	<tr>
+<%growers.each do |grower|%>
+	<tr class="text-center">
 		<td><%=link_to grower.name,group_grower_path(@group,grower)%></td>
 		<td><%= grower.pmus.count%></td>
 		<td><%=grower.pmus.sum(:expected_production)%></td>

@@ -17,19 +17,20 @@
   </div>
 
 
-  <div class="radio-inline">
+  <div class="form-group">
     <%=f.radio_button :option,"Option 1",class:"control"%>Option 1
-    <%=f.label :option,"Option 1",class:"radio-inline"%>
-    <%=f.label :option,"Option 2",class:"radio-inline"%>
-    <%=f.radio_button :option,"Option 2",class:"control"%>
+    <%=f.radio_button :option,"Option 2",class:"control"%>Option 2
   </div>
 
   <div class="form-group">
     <%= f.label :name ,class:"control-label"%><br>
-    <%= f.text_area :name,class:"control" %>
+    <%= f.text_area :name,class:"form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit class:"btn" %>
+    <%= f.submit class:"btn" %>  <%= link_to 'Cancel', projects_path ,class:"btn btn-link"%>
+
   </div>
 <% end %>
+
+<br>
 

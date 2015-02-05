@@ -33,11 +33,7 @@
     <%= f.text_field :variety %>
   </div>
 
-  <div class="field">
-     <%=f.check_box :ggcert %>
-    <%= f.label :ggcert ,"globalGAP certification"%>
-   
-  </div>
+
 
   
   <div class="field">
@@ -86,10 +82,15 @@
     <%= check_box_tag "pmu[facility_ids][]", facility.id,@pmu.facility_ids.include?(facility.id),id: dom_id(facility)  %>
     <%= facility.name %>
   <% end %>
-</div>
+  </div>
+
+  <div class="field">
+    <%=f.check_box :ggcert %>
+    <%= f.label :ggcert ,"globalGAP certification"%>
+  </div>
   
 
   <div class="actions">
-    <%= f.submit %> 
+    <%= f.submit class:"btn btn-default" %>
   </div>
 <% end %>
