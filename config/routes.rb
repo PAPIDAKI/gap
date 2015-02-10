@@ -7,7 +7,11 @@ Gap::Application.routes.draw do
 
   
 
-  
+  resources :productions
+
+  resources :standards
+
+  resources :growers
 
   resources :produces
 

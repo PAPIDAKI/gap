@@ -4,7 +4,6 @@
 	with  
 	<%=pluralize(@group.pmus.count,"Field")%>
 	 and  an expected production of   
-	 <%=pluralize(@group.pmus.sum(:expected_production),"Ton") %> </h5>
 
 </tr>
 
@@ -17,7 +16,6 @@
 	<tr class="text-center">
 		<td><%=link_to grower.name,group_grower_path(@group,grower)%></td>
 		<td><%= grower.pmus.count%></td>
-		<td><%=grower.pmus.sum(:expected_production)%></td>
 
 	</tr>
 	<%end%>

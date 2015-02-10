@@ -34,6 +34,7 @@ pdf.text "This an external link to the " +
   end
 
   def new
+		@produces_otions=Produce.all.map{|u| [u.name,u.id]}
     @pmu =@grower.pmus.new
   end
 

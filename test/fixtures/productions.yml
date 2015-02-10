@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pmu_id: 1
+  produce_id: 1
+  variety: MyString
+
+two:
+  pmu_id: 1
+  produce_id: 1
+  variety: MyString

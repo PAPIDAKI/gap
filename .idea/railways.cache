@@ -1,0 +1,353 @@
+                       Prefix Verb   URI Pattern                                                    Controller#Action
+                      growers GET    /growers(.:format)                                             growers#index
+                              POST   /growers(.:format)                                             growers#create
+                   new_grower GET    /growers/new(.:format)                                         growers#new
+                  edit_grower GET    /growers/:id/edit(.:format)                                    growers#edit
+                       grower GET    /growers/:id(.:format)                                         growers#show
+                              PATCH  /growers/:id(.:format)                                         growers#update
+                              PUT    /growers/:id(.:format)                                         growers#update
+                              DELETE /growers/:id(.:format)                                         growers#destroy
+                     produces GET    /produces(.:format)                                            produces#index
+                              POST   /produces(.:format)                                            produces#create
+                  new_produce GET    /produces/new(.:format)                                        produces#new
+                 edit_produce GET    /produces/:id/edit(.:format)                                   produces#edit
+                      produce GET    /produces/:id(.:format)                                        produces#show
+                              PATCH  /produces/:id(.:format)                                        produces#update
+                              PUT    /produces/:id(.:format)                                        produces#update
+                              DELETE /produces/:id(.:format)                                        produces#destroy
+                     projects GET    /projects(.:format)                                            projects#index
+                              POST   /projects(.:format)                                            projects#create
+                  new_project GET    /projects/new(.:format)                                        projects#new
+                 edit_project GET    /projects/:id/edit(.:format)                                   projects#edit
+                      project GET    /projects/:id(.:format)                                        projects#show
+                              PATCH  /projects/:id(.:format)                                        projects#update
+                              PUT    /projects/:id(.:format)                                        projects#update
+                              DELETE /projects/:id(.:format)                                        projects#destroy
+             import_droncrops POST   /droncrops/import(.:format)                                    droncrops#import
+                    droncrops GET    /droncrops(.:format)                                           droncrops#index
+                              POST   /droncrops(.:format)                                           droncrops#create
+                 new_droncrop GET    /droncrops/new(.:format)                                       droncrops#new
+                edit_droncrop GET    /droncrops/:id/edit(.:format)                                  droncrops#edit
+                     droncrop GET    /droncrops/:id(.:format)                                       droncrops#show
+                              PATCH  /droncrops/:id(.:format)                                       droncrops#update
+                              PUT    /droncrops/:id(.:format)                                       droncrops#update
+                              DELETE /droncrops/:id(.:format)                                       droncrops#destroy
+             import_systatiks POST   /systatiks/import(.:format)                                    systatiks#import
+                    systatiks GET    /systatiks(.:format)                                           systatiks#index
+                              POST   /systatiks(.:format)                                           systatiks#create
+                 new_systatik GET    /systatiks/new(.:format)                                       systatiks#new
+                edit_systatik GET    /systatiks/:id/edit(.:format)                                  systatiks#edit
+                     systatik GET    /systatiks/:id(.:format)                                       systatiks#show
+                              PATCH  /systatiks/:id(.:format)                                       systatiks#update
+                              PUT    /systatiks/:id(.:format)                                       systatiks#update
+                              DELETE /systatiks/:id(.:format)                                       systatiks#destroy
+            import_epembashes POST   /epembashes/import(.:format)                                   epembashes#import
+                   epembashes GET    /epembashes(.:format)                                          epembashes#index
+                              POST   /epembashes(.:format)                                          epembashes#create
+                 new_epembash GET    /epembashes/new(.:format)                                      epembashes#new
+                edit_epembash GET    /epembashes/:id/edit(.:format)                                 epembashes#edit
+                     epembash GET    /epembashes/:id(.:format)                                      epembashes#show
+                              PATCH  /epembashes/:id(.:format)                                      epembashes#update
+                              PUT    /epembashes/:id(.:format)                                      epembashes#update
+                              DELETE /epembashes/:id(.:format)                                      epembashes#destroy
+              import_farmakos POST   /farmakos/import(.:format)                                     farmakos#import
+                     farmakos GET    /farmakos(.:format)                                            farmakos#index
+                              POST   /farmakos(.:format)                                            farmakos#create
+                  new_farmako GET    /farmakos/new(.:format)                                        farmakos#new
+                 edit_farmako GET    /farmakos/:id/edit(.:format)                                   farmakos#edit
+                      farmako GET    /farmakos/:id(.:format)                                        farmakos#show
+                              PATCH  /farmakos/:id(.:format)                                        farmakos#update
+                              PUT    /farmakos/:id(.:format)                                        farmakos#update
+                              DELETE /farmakos/:id(.:format)                                        farmakos#destroy
+              import_asthenia POST   /asthenia/import(.:format)                                     asthenia#import
+                     asthenia GET    /asthenia(.:format)                                            asthenia#index
+                              POST   /asthenia(.:format)                                            asthenia#create
+                new_asthenium GET    /asthenia/new(.:format)                                        asthenia#new
+               edit_asthenium GET    /asthenia/:id/edit(.:format)                                   asthenia#edit
+                    asthenium GET    /asthenia/:id(.:format)                                        asthenia#show
+                              PATCH  /asthenia/:id(.:format)                                        asthenia#update
+                              PUT    /asthenia/:id(.:format)                                        asthenia#update
+                              DELETE /asthenia/:id(.:format)                                        asthenia#destroy
+                     crop_pps GET    /crops/:crop_id/pps(.:format)                                  pps#index
+                              POST   /crops/:crop_id/pps(.:format)                                  pps#create
+                  new_crop_pp GET    /crops/:crop_id/pps/new(.:format)                              pps#new
+                 edit_crop_pp GET    /crops/:crop_id/pps/:id/edit(.:format)                         pps#edit
+                      crop_pp GET    /crops/:crop_id/pps/:id(.:format)                              pps#show
+                              PATCH  /crops/:crop_id/pps/:id(.:format)                              pps#update
+                              PUT    /crops/:crop_id/pps/:id(.:format)                              pps#update
+                              DELETE /crops/:crop_id/pps/:id(.:format)                              pps#destroy
+                 import_crops POST   /crops/import(.:format)                                        crops#import
+                        crops GET    /crops(.:format)                                               crops#index
+                              POST   /crops(.:format)                                               crops#create
+                     new_crop GET    /crops/new(.:format)                                           crops#new
+                    edit_crop GET    /crops/:id/edit(.:format)                                      crops#edit
+                         crop GET    /crops/:id(.:format)                                           crops#show
+                              PATCH  /crops/:id(.:format)                                           crops#update
+                              PUT    /crops/:id(.:format)                                           crops#update
+                              DELETE /crops/:id(.:format)                                           crops#destroy
+                grower_events GET    /growers/:grower_id/events(.:format)                           events#index
+                              POST   /growers/:grower_id/events(.:format)                           events#create
+             new_grower_event GET    /growers/:grower_id/events/new(.:format)                       events#new
+            edit_grower_event GET    /growers/:grower_id/events/:id/edit(.:format)                  events#edit
+                 grower_event GET    /growers/:grower_id/events/:id(.:format)                       events#show
+                              PATCH  /growers/:grower_id/events/:id(.:format)                       events#update
+                              PUT    /growers/:grower_id/events/:id(.:format)                       events#update
+                              DELETE /growers/:grower_id/events/:id(.:format)                       events#destroy
+        grower_events_evcults GET    /growers/:grower_id/events/evcults(.:format)                   events#index {:scope=>"evcults"}
+        grower_events_evferts GET    /growers/:grower_id/events/evferts(.:format)                   events#index {:scope=>"evferts"}
+       grower_events_evphytos GET    /growers/:grower_id/events/evphytos(.:format)                  events#index {:scope=>"evphytos"}
+               grower_evcults GET    /growers/:grower_id/evcults(.:format)                          events#index {:type=>"Evcult"}
+                              POST   /growers/:grower_id/evcults(.:format)                          events#create {:type=>"Evcult"}
+            new_grower_evcult GET    /growers/:grower_id/evcults/new(.:format)                      events#new {:type=>"Evcult"}
+           edit_grower_evcult GET    /growers/:grower_id/evcults/:id/edit(.:format)                 events#edit {:type=>"Evcult"}
+                grower_evcult GET    /growers/:grower_id/evcults/:id(.:format)                      events#show {:type=>"Evcult"}
+                              PATCH  /growers/:grower_id/evcults/:id(.:format)                      events#update {:type=>"Evcult"}
+                              PUT    /growers/:grower_id/evcults/:id(.:format)                      events#update {:type=>"Evcult"}
+                              DELETE /growers/:grower_id/evcults/:id(.:format)                      events#destroy {:type=>"Evcult"}
+              grower_evphytos GET    /growers/:grower_id/evphytos(.:format)                         events#index {:type=>"Evphyto"}
+                              POST   /growers/:grower_id/evphytos(.:format)                         events#create {:type=>"Evphyto"}
+           new_grower_evphyto GET    /growers/:grower_id/evphytos/new(.:format)                     events#new {:type=>"Evphyto"}
+          edit_grower_evphyto GET    /growers/:grower_id/evphytos/:id/edit(.:format)                events#edit {:type=>"Evphyto"}
+               grower_evphyto GET    /growers/:grower_id/evphytos/:id(.:format)                     events#show {:type=>"Evphyto"}
+                              PATCH  /growers/:grower_id/evphytos/:id(.:format)                     events#update {:type=>"Evphyto"}
+                              PUT    /growers/:grower_id/evphytos/:id(.:format)                     events#update {:type=>"Evphyto"}
+                              DELETE /growers/:grower_id/evphytos/:id(.:format)                     events#destroy {:type=>"Evphyto"}
+               grower_evferts GET    /growers/:grower_id/evferts(.:format)                          events#index {:type=>"Evfert"}
+                              POST   /growers/:grower_id/evferts(.:format)                          events#create {:type=>"Evfert"}
+            new_grower_evfert GET    /growers/:grower_id/evferts/new(.:format)                      events#new {:type=>"Evfert"}
+           edit_grower_evfert GET    /growers/:grower_id/evferts/:id/edit(.:format)                 events#edit {:type=>"Evfert"}
+                grower_evfert GET    /growers/:grower_id/evferts/:id(.:format)                      events#show {:type=>"Evfert"}
+                              PATCH  /growers/:grower_id/evferts/:id(.:format)                      events#update {:type=>"Evfert"}
+                              PUT    /growers/:grower_id/evferts/:id(.:format)                      events#update {:type=>"Evfert"}
+                              DELETE /growers/:grower_id/evferts/:id(.:format)                      events#destroy {:type=>"Evfert"}
+            grower_logentries GET    /growers/:grower_id/logentries(.:format)                       logentries#index
+                              POST   /growers/:grower_id/logentries(.:format)                       logentries#create
+          new_grower_logentry GET    /growers/:grower_id/logentries/new(.:format)                   logentries#new
+         edit_grower_logentry GET    /growers/:grower_id/logentries/:id/edit(.:format)              logentries#edit
+              grower_logentry GET    /growers/:grower_id/logentries/:id(.:format)                   logentries#show
+                              PATCH  /growers/:grower_id/logentries/:id(.:format)                   logentries#update
+                              PUT    /growers/:grower_id/logentries/:id(.:format)                   logentries#update
+                              DELETE /growers/:grower_id/logentries/:id(.:format)                   logentries#destroy
+                  grower_pmus GET    /growers/:grower_id/pmus(.:format)                             pmus#index
+                              POST   /growers/:grower_id/pmus(.:format)                             pmus#create
+               new_grower_pmu GET    /growers/:grower_id/pmus/new(.:format)                         pmus#new
+              edit_grower_pmu GET    /growers/:grower_id/pmus/:id/edit(.:format)                    pmus#edit
+                   grower_pmu GET    /growers/:grower_id/pmus/:id(.:format)                         pmus#show
+                              PATCH  /growers/:grower_id/pmus/:id(.:format)                         pmus#update
+                              PUT    /growers/:grower_id/pmus/:id(.:format)                         pmus#update
+                              DELETE /growers/:grower_id/pmus/:id(.:format)                         pmus#destroy
+                              GET    /growers(.:format)                                             growers#index
+                              POST   /growers(.:format)                                             growers#create
+                              GET    /growers/new(.:format)                                         growers#new
+                              GET    /growers/:id/edit(.:format)                                    growers#edit
+                              GET    /growers/:id(.:format)                                         growers#show
+                              PATCH  /growers/:id(.:format)                                         growers#update
+                              PUT    /growers/:id(.:format)                                         growers#update
+                              DELETE /growers/:id(.:format)                                         growers#destroy
+            group_grower_pmus GET    /groups/:group_id/growers/:grower_id/pmus(.:format)            pmus#index
+                              POST   /groups/:group_id/growers/:grower_id/pmus(.:format)            pmus#create
+         new_group_grower_pmu GET    /groups/:group_id/growers/:grower_id/pmus/new(.:format)        pmus#new
+        edit_group_grower_pmu GET    /groups/:group_id/growers/:grower_id/pmus/:id/edit(.:format)   pmus#edit
+             group_grower_pmu GET    /groups/:group_id/growers/:grower_id/pmus/:id(.:format)        pmus#show
+                              PATCH  /groups/:group_id/growers/:grower_id/pmus/:id(.:format)        pmus#update
+                              PUT    /groups/:group_id/growers/:grower_id/pmus/:id(.:format)        pmus#update
+                              DELETE /groups/:group_id/growers/:grower_id/pmus/:id(.:format)        pmus#destroy
+  group_grower_events_evcults GET    /groups/:group_id/growers/:grower_id/events/evcults(.:format)  events#index {:scope=>"evcults"}
+  group_grower_events_evferts GET    /groups/:group_id/growers/:grower_id/events/evferts(.:format)  events#index {:scope=>"evferts"}
+ group_grower_events_evphytos GET    /groups/:group_id/growers/:grower_id/events/evphytos(.:format) events#index {:scope=>"evphytos"}
+          group_grower_events GET    /groups/:group_id/growers/:grower_id/events(.:format)          events#index
+                              POST   /groups/:group_id/growers/:grower_id/events(.:format)          events#create
+       new_group_grower_event GET    /groups/:group_id/growers/:grower_id/events/new(.:format)      events#new
+      edit_group_grower_event GET    /groups/:group_id/growers/:grower_id/events/:id/edit(.:format) events#edit
+           group_grower_event GET    /groups/:group_id/growers/:grower_id/events/:id(.:format)      events#show
+                              PATCH  /groups/:group_id/growers/:grower_id/events/:id(.:format)      events#update
+                              PUT    /groups/:group_id/growers/:grower_id/events/:id(.:format)      events#update
+                              DELETE /groups/:group_id/growers/:grower_id/events/:id(.:format)      events#destroy
+                group_growers GET    /groups/:group_id/growers(.:format)                            growers#index
+                              POST   /groups/:group_id/growers(.:format)                            growers#create
+             new_group_grower GET    /groups/:group_id/growers/new(.:format)                        growers#new
+            edit_group_grower GET    /groups/:group_id/growers/:id/edit(.:format)                   growers#edit
+                 group_grower GET    /groups/:group_id/growers/:id(.:format)                        growers#show
+                              PATCH  /groups/:group_id/growers/:id(.:format)                        growers#update
+                              PUT    /groups/:group_id/growers/:id(.:format)                        growers#update
+                              DELETE /groups/:group_id/growers/:id(.:format)                        growers#destroy
+                       groups GET    /groups(.:format)                                              groups#index
+                              POST   /groups(.:format)                                              groups#create
+                    new_group GET    /groups/new(.:format)                                          groups#new
+                   edit_group GET    /groups/:id/edit(.:format)                                     groups#edit
+                        group GET    /groups/:id(.:format)                                          groups#show
+                              PATCH  /groups/:id(.:format)                                          groups#update
+                              PUT    /groups/:id(.:format)                                          groups#update
+                              DELETE /groups/:id(.:format)                                          groups#destroy
+                       events GET    /events(.:format)                                              events#index
+                              POST   /events(.:format)                                              events#create
+                    new_event GET    /events/new(.:format)                                          events#new
+                   edit_event GET    /events/:id/edit(.:format)                                     events#edit
+                        event GET    /events/:id(.:format)                                          events#show
+                              PATCH  /events/:id(.:format)                                          events#update
+                              PUT    /events/:id(.:format)                                          events#update
+                              DELETE /events/:id(.:format)                                          events#destroy
+groups_growers_events_evcults GET    /groups/growers/events/evcults(.:format)                       events#index {:scope=>"evcults"}
+               events_evferts GET    /events/evferts(.:format)                                      events#index {:scope=>"evferts"}
+              events_evphytos GET    /events/evphytos(.:format)                                     events#index {:scope=>"evphytos"}
+                              GET    /growers/:grower_id/events/evcults(.:format)                   events#index {:scope=>"evcults"}
+                              GET    /growers/:grower_id/events/evferts(.:format)                   events#index {:scope=>"evferts"}
+                              GET    /growers/:grower_id/events/evphytos(.:format)                  events#index {:scope=>"evphytos"}
+                              GET    /growers(.:format)                                             growers#index
+                              POST   /growers(.:format)                                             growers#create
+                              GET    /growers/new(.:format)                                         growers#new
+                              GET    /growers/:id/edit(.:format)                                    growers#edit
+                              GET    /growers/:id(.:format)                                         growers#show
+                              PATCH  /growers/:id(.:format)                                         growers#update
+                              PUT    /growers/:id(.:format)                                         growers#update
+                              DELETE /growers/:id(.:format)                                         growers#destroy
+                              GET    /events(.:format)                                              events#index
+                              POST   /events(.:format)                                              events#create
+                              GET    /events/new(.:format)                                          events#new
+                              GET    /events/:id/edit(.:format)                                     events#edit
+                              GET    /events/:id(.:format)                                          events#show
+                              PATCH  /events/:id(.:format)                                          events#update
+                              PUT    /events/:id(.:format)                                          events#update
+                              DELETE /events/:id(.:format)                                          events#destroy
+                      evcults GET    /evcults(.:format)                                             events#index {:type=>"Evcult"}
+                              POST   /evcults(.:format)                                             events#create {:type=>"Evcult"}
+                   new_evcult GET    /evcults/new(.:format)                                         events#new {:type=>"Evcult"}
+                  edit_evcult GET    /evcults/:id/edit(.:format)                                    events#edit {:type=>"Evcult"}
+                       evcult GET    /evcults/:id(.:format)                                         events#show {:type=>"Evcult"}
+                              PATCH  /evcults/:id(.:format)                                         events#update {:type=>"Evcult"}
+                              PUT    /evcults/:id(.:format)                                         events#update {:type=>"Evcult"}
+                              DELETE /evcults/:id(.:format)                                         events#destroy {:type=>"Evcult"}
+                     evphytos GET    /evphytos(.:format)                                            events#index {:type=>"Evphyto"}
+                              POST   /evphytos(.:format)                                            events#create {:type=>"Evphyto"}
+                  new_evphyto GET    /evphytos/new(.:format)                                        events#new {:type=>"Evphyto"}
+                 edit_evphyto GET    /evphytos/:id/edit(.:format)                                   events#edit {:type=>"Evphyto"}
+                      evphyto GET    /evphytos/:id(.:format)                                        events#show {:type=>"Evphyto"}
+                              PATCH  /evphytos/:id(.:format)                                        events#update {:type=>"Evphyto"}
+                              PUT    /evphytos/:id(.:format)                                        events#update {:type=>"Evphyto"}
+                              DELETE /evphytos/:id(.:format)                                        events#destroy {:type=>"Evphyto"}
+                      evferts GET    /evferts(.:format)                                             events#index {:type=>"Evfert"}
+                              POST   /evferts(.:format)                                             events#create {:type=>"Evfert"}
+                   new_evfert GET    /evferts/new(.:format)                                         events#new {:type=>"Evfert"}
+                  edit_evfert GET    /evferts/:id/edit(.:format)                                    events#edit {:type=>"Evfert"}
+                       evfert GET    /evferts/:id(.:format)                                         events#show {:type=>"Evfert"}
+                              PATCH  /evferts/:id(.:format)                                         events#update {:type=>"Evfert"}
+                              PUT    /evferts/:id(.:format)                                         events#update {:type=>"Evfert"}
+                              DELETE /evferts/:id(.:format)                                         events#destroy {:type=>"Evfert"}
+                         root GET    /                                                              static_pages#home
+           static_pages_about GET    /static_pages/about(.:format)                                  static_pages#about
+      static_pages_contact_us GET    /static_pages/contact_us(.:format)                             static_pages#contact_us
+             new_user_session GET    /users/sign_in(.:format)                                       devise/sessions#new
+                 user_session POST   /users/sign_in(.:format)                                       devise/sessions#create
+         destroy_user_session DELETE /users/sign_out(.:format)                                      devise/sessions#destroy
+                user_password POST   /users/password(.:format)                                      devise/passwords#create
+            new_user_password GET    /users/password/new(.:format)                                  devise/passwords#new
+           edit_user_password GET    /users/password/edit(.:format)                                 devise/passwords#edit
+                              PATCH  /users/password(.:format)                                      devise/passwords#update
+                              PUT    /users/password(.:format)                                      devise/passwords#update
+     cancel_user_registration GET    /users/cancel(.:format)                                        devise/registrations#cancel
+            user_registration POST   /users(.:format)                                               devise/registrations#create
+        new_user_registration GET    /users/sign_up(.:format)                                       devise/registrations#new
+       edit_user_registration GET    /users/edit(.:format)                                          devise/registrations#edit
+                              PATCH  /users(.:format)                                               devise/registrations#update
+                              PUT    /users(.:format)                                               devise/registrations#update
+                              DELETE /users(.:format)                                               devise/registrations#destroy
+               events_evcults GET    /events/evcults(.:format)                                      events#index {:scope=>"evcults"}
+                              GET    /events/evferts(.:format)                                      events#index {:scope=>"evferts"}
+                              GET    /events/evphytos(.:format)                                     events#index {:scope=>"evphytos"}
+                              GET    /evcults(.:format)                                             events#index {:type=>"Evcult"}
+                              POST   /evcults(.:format)                                             events#create {:type=>"Evcult"}
+                              GET    /evcults/new(.:format)                                         events#new {:type=>"Evcult"}
+                              GET    /evcults/:id/edit(.:format)                                    events#edit {:type=>"Evcult"}
+                              GET    /evcults/:id(.:format)                                         events#show {:type=>"Evcult"}
+                              PATCH  /evcults/:id(.:format)                                         events#update {:type=>"Evcult"}
+                              PUT    /evcults/:id(.:format)                                         events#update {:type=>"Evcult"}
+                              DELETE /evcults/:id(.:format)                                         events#destroy {:type=>"Evcult"}
+                              GET    /evphytos(.:format)                                            events#index {:type=>"Evphyto"}
+                              POST   /evphytos(.:format)                                            events#create {:type=>"Evphyto"}
+                              GET    /evphytos/new(.:format)                                        events#new {:type=>"Evphyto"}
+                              GET    /evphytos/:id/edit(.:format)                                   events#edit {:type=>"Evphyto"}
+                              GET    /evphytos/:id(.:format)                                        events#show {:type=>"Evphyto"}
+                              PATCH  /evphytos/:id(.:format)                                        events#update {:type=>"Evphyto"}
+                              PUT    /evphytos/:id(.:format)                                        events#update {:type=>"Evphyto"}
+                              DELETE /evphytos/:id(.:format)                                        events#destroy {:type=>"Evphyto"}
+                              GET    /evferts(.:format)                                             events#index {:type=>"Evfert"}
+                              POST   /evferts(.:format)                                             events#create {:type=>"Evfert"}
+                              GET    /evferts/new(.:format)                                         events#new {:type=>"Evfert"}
+                              GET    /evferts/:id/edit(.:format)                                    events#edit {:type=>"Evfert"}
+                              GET    /evferts/:id(.:format)                                         events#show {:type=>"Evfert"}
+                              PATCH  /evferts/:id(.:format)                                         events#update {:type=>"Evfert"}
+                              PUT    /evferts/:id(.:format)                                         events#update {:type=>"Evfert"}
+                              DELETE /evferts/:id(.:format)                                         events#destroy {:type=>"Evfert"}
+                              GET    /events(.:format)                                              events#index
+                              POST   /events(.:format)                                              events#create
+                              GET    /events/new(.:format)                                          events#new
+                              GET    /events/:id/edit(.:format)                                     events#edit
+                              GET    /events/:id(.:format)                                          events#show
+                              PATCH  /events/:id(.:format)                                          events#update
+                              PUT    /events/:id(.:format)                                          events#update
+                              DELETE /events/:id(.:format)                                          events#destroy
+                        steps GET    /steps(.:format)                                               steps#index
+                              POST   /steps(.:format)                                               steps#create
+                     new_step GET    /steps/new(.:format)                                           steps#new
+                    edit_step GET    /steps/:id/edit(.:format)                                      steps#edit
+                         step GET    /steps/:id(.:format)                                           steps#show
+                              PATCH  /steps/:id(.:format)                                           steps#update
+                              PUT    /steps/:id(.:format)                                           steps#update
+                              DELETE /steps/:id(.:format)                                           steps#destroy
+                   procedures GET    /procedures(.:format)                                          procedures#index
+                              POST   /procedures(.:format)                                          procedures#create
+                new_procedure GET    /procedures/new(.:format)                                      procedures#new
+               edit_procedure GET    /procedures/:id/edit(.:format)                                 procedures#edit
+                    procedure GET    /procedures/:id(.:format)                                      procedures#show
+                              PATCH  /procedures/:id(.:format)                                      procedures#update
+                              PUT    /procedures/:id(.:format)                                      procedures#update
+                              DELETE /procedures/:id(.:format)                                      procedures#destroy
+                        roles GET    /roles(.:format)                                               roles#index
+                              POST   /roles(.:format)                                               roles#create
+                     new_role GET    /roles/new(.:format)                                           roles#new
+                    edit_role GET    /roles/:id/edit(.:format)                                      roles#edit
+                         role GET    /roles/:id(.:format)                                           roles#show
+                              PATCH  /roles/:id(.:format)                                           roles#update
+                              PUT    /roles/:id(.:format)                                           roles#update
+                              DELETE /roles/:id(.:format)                                           roles#destroy
+                  group_roles GET    /group_roles(.:format)                                         group_roles#index
+                              POST   /group_roles(.:format)                                         group_roles#create
+               new_group_role GET    /group_roles/new(.:format)                                     group_roles#new
+              edit_group_role GET    /group_roles/:id/edit(.:format)                                group_roles#edit
+                   group_role GET    /group_roles/:id(.:format)                                     group_roles#show
+                              PATCH  /group_roles/:id(.:format)                                     group_roles#update
+                              PUT    /group_roles/:id(.:format)                                     group_roles#update
+                              DELETE /group_roles/:id(.:format)                                     group_roles#destroy
+               import_clitems POST   /clitems/import(.:format)                                      clitems#import
+          clitem_instructions GET    /clitems/:clitem_id/instructions(.:format)                     instructions#index
+                              POST   /clitems/:clitem_id/instructions(.:format)                     instructions#create
+       new_clitem_instruction GET    /clitems/:clitem_id/instructions/new(.:format)                 instructions#new
+      edit_clitem_instruction GET    /clitems/:clitem_id/instructions/:id/edit(.:format)            instructions#edit
+           clitem_instruction GET    /clitems/:clitem_id/instructions/:id(.:format)                 instructions#show
+                              PATCH  /clitems/:clitem_id/instructions/:id(.:format)                 instructions#update
+                              PUT    /clitems/:clitem_id/instructions/:id(.:format)                 instructions#update
+                              DELETE /clitems/:clitem_id/instructions/:id(.:format)                 instructions#destroy
+                      clitems GET    /clitems(.:format)                                             clitems#index
+                              POST   /clitems(.:format)                                             clitems#create
+                   new_clitem GET    /clitems/new(.:format)                                         clitems#new
+                  edit_clitem GET    /clitems/:id/edit(.:format)                                    clitems#edit
+                       clitem GET    /clitems/:id(.:format)                                         clitems#show
+                              PATCH  /clitems/:id(.:format)                                         clitems#update
+                              PUT    /clitems/:id(.:format)                                         clitems#update
+                              DELETE /clitems/:id(.:format)                                         clitems#destroy
+                   facilities GET    /facilities(.:format)                                          facilities#index
+                              POST   /facilities(.:format)                                          facilities#create
+                 new_facility GET    /facilities/new(.:format)                                      facilities#new
+                edit_facility GET    /facilities/:id/edit(.:format)                                 facilities#edit
+                     facility GET    /facilities/:id(.:format)                                      facilities#show
+                              PATCH  /facilities/:id(.:format)                                      facilities#update
+                              PUT    /facilities/:id(.:format)                                      facilities#update
+                              DELETE /facilities/:id(.:format)                                      facilities#destroy
+                         subs GET    /subs(.:format)                                                subs#index
+                              POST   /subs(.:format)                                                subs#create
+                      new_sub GET    /subs/new(.:format)                                            subs#new
+                     edit_sub GET    /subs/:id/edit(.:format)                                       subs#edit
+                          sub GET    /subs/:id(.:format)                                            subs#show
+                              PATCH  /subs/:id(.:format)                                            subs#update
+                              PUT    /subs/:id(.:format)                                            subs#update
+                              DELETE /subs/:id(.:format)                                            subs#destroy

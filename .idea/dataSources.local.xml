@@ -3,6 +3,8 @@
   <component name="dataSourceStorageLocal">
     <data-source name="Rails gap: development" uuid="5c42534f-dd09-440f-bf62-fb1f5f9e277f">
       <secret-storage>memory</secret-storage>
+      <schema-pattern>gap_development.*</schema-pattern>
+      <default-schemas>gap_development.*</default-schemas>
     </data-source>
     <data-source name="Rails gap: test" uuid="cf8752b2-5d92-47cc-9368-7efc1d23154a">
       <secret-storage>memory</secret-storage>

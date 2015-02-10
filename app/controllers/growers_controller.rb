@@ -3,7 +3,9 @@ class GrowersController < ApplicationController
 
 
 	def index
-		@growers=@group.growers
+
+		@growers=@group.growers if params[:group_id].present?
+		#@growers=Grower.all
 
 	end
 
@@ -46,6 +48,6 @@ private
 	end
 
 	def load_group
-		@group=Group.find(params[:group_id])
+		@group=Group.find(params[:group_id]) if params[:group_id].present?
 	end
 end

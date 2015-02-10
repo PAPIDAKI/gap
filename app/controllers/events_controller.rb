@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
 
 	def index
-		
+
 		case params[:scope]
 		when 'evferts'
 			@events=@grower.evferts

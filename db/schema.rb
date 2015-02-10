@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203114046) do
+ActiveRecord::Schema.define(version: 20150210112741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20150203114046) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "certifications", force: true do |t|
+    t.integer  "standard_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "production_id"
+  end
+
+  add_index "certifications", ["production_id"], name: "index_certifications_on_production_id", using: :btree
 
   create_table "clitems", force: true do |t|
     t.string   "number"
@@ -204,23 +213,32 @@ ActiveRecord::Schema.define(version: 20150203114046) do
   end
 
   create_table "pmus", force: true do |t|
-    t.string   "produce"
-    t.string   "variety"
     t.string   "location"
     t.string   "nearest_village"
     t.string   "address"
-    t.integer  "plantation_year"
-    t.integer  "number_of_trees"
     t.integer  "area"
-    t.integer  "expected_production"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "grower_id"
     t.float    "longitude"
     t.float    "latitude"
-    t.date     "ehd"
-    t.boolean  "ggcert"
   end
+
+  create_table "pmus_certifications", id: false, force: true do |t|
+    t.integer "pmus_id"
+    t.integer "certifications_id"
+  end
+
+  add_index "pmus_certifications", ["certifications_id"], name: "index_pmus_certifications_on_certifications_id", using: :btree
+  add_index "pmus_certifications", ["pmus_id"], name: "index_pmus_certifications_on_pmus_id", using: :btree
+
+  create_table "pmus_produces", id: false, force: true do |t|
+    t.integer "pmu_id"
+    t.integer "produce_id"
+  end
+
+  add_index "pmus_produces", ["pmu_id"], name: "index_pmus_produces_on_pmu_id", using: :btree
+  add_index "pmus_produces", ["produce_id"], name: "index_pmus_produces_on_produce_id", using: :btree
 
   create_table "pps", force: true do |t|
     t.string   "quantity"
@@ -248,6 +266,18 @@ ActiveRecord::Schema.define(version: 20150203114046) do
     t.datetime "updated_at"
   end
 
+  create_table "productions", force: true do |t|
+    t.integer  "pmu_id"
+    t.integer  "produce_id"
+    t.string   "variety"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "plantation_year"
+    t.integer  "number_of_trees"
+    t.date     "ehd"
+    t.integer  "expected_quantity"
+  end
+
   create_table "projects", force: true do |t|
     t.string   "produce"
     t.string   "option"
@@ -269,6 +299,12 @@ ActiveRecord::Schema.define(version: 20150203114046) do
     t.string   "reason"
     t.integer  "phi"
     t.string   "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "standards", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

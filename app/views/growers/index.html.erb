@@ -3,7 +3,7 @@
 </p>
 
 <div>
-<h3><%=@group.name%></h3> 
+<h3><%=@group.name if params[:group_id].present? %></h3>
 <h5><%=pluralize(@growers.count,"Grower") %></h5>
 </div>
 
@@ -14,9 +14,8 @@
 
 	<%@growers.each do |grower|%>
 	<tr>
-		<td><%=link_to grower.name,group_grower_path(@group,grower)%></td>
-		<td><%= grower.pmus.count%></td>
-		<td><%=grower.pmus.sum(:expected_production)%></td>
+      <td><%=link_to grower.name,group_grower_path(@group,grower)%></td>
+      <td><%= grower.pmus.count%></td>
 
 	</tr>
 	<%end%>

@@ -3,28 +3,24 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-<p><strong><%=@grower.name %></strong></p>  
-  <strong><%= @pmu.produce %></strong>
-
-  Variety:
-  <%= @pmu.variety %>
-</p>
-
+<p><strong><%=@grower.name %></strong></p>
 
 
 <p>
-  <strong>Plantation year:</strong>
-  <%= @pmu.plantation_year %>
+  <strong>Location:</strong>
+  <%= @pmu.location %>
 
-  <strong>Number of trees:</strong>
-  <%= @pmu.number_of_trees %>
+  <strong>Nearest village:</strong>
+  <%= @pmu.nearest_village %>
+
+  <strong>Address:</strong>
+  <%= @pmu.address %>
+
 
   <strong>Area:</strong>
   <%= @pmu.area %>
 
-  <strong>Expected production:</strong>
-  <%= @pmu.expected_production %>
+
 </p>
 
 <b>Facilities</b>
@@ -37,14 +33,7 @@
 
 
 <p>
-  <strong>Location:</strong>
-  <%= @pmu.location %>
 
-  <strong>Nearest village:</strong>
-  <%= @pmu.nearest_village %>
-
-  <strong>Address:</strong>
-  <%= @pmu.address %>
 </p>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=true&zoom=16&markers=#{@pmu.latitude}%2C#{@pmu.longitude}" %>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&maptype=satellite&zoom=18&markers=#{@pmu.latitude}%2C#{@pmu.longitude}" %>

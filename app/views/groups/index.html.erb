@@ -4,8 +4,6 @@
   <h2><%= pluralize(@groups.count ,'Group') %> </h2>
 <h3><%= pluralize(@growers.count,'Grower') %> <h3>
 
-<h3> <%= pluralize(@pmus.count,'Field')%> </h3>
-  <h3><%= pluralize(@pmus.sum(:expected_production),'Ton')%></h3>
 </div>
   <%=link_to("Add new Group",new_group_path , class:"btn btn-link")%>
 
@@ -16,7 +14,6 @@
           <%= link_to "#{group.name} #{group.growers.count}g #{group.pmus.count}f-",group_path(group)%>
  		  <%= group.growers.count(@group) %> Growers
  		  <%= group.pmus.count%> Fields
- 		  <%=group.pmus.sum(:expected_production)%> Tons</li>
  	<% end%>
  </ul>
  <div>

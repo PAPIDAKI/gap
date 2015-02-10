@@ -16,8 +16,6 @@
 <hr>
   <div>
     <h3>PMUs</h3>
-    <h5>Fields in Production <%=@grower.pmus.count(:expected_production) %></h5>
-    <h5>Expected Production <%=@grower.pmus.sum(:expected_production)%></h5>
 
     <%=render :partial=> "pmu_list",:locals=>{:pmus=>Pmu.find_all_by_grower_id(@grower.id)} %>
 
